@@ -6,9 +6,13 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color:#3D444A!important;
-    color: #fff!important;
+    background-color:whitesmokedsa!important;
+    color: #3D444A!important;
     
+}
+
+ul{
+    padding: 0; list-style: none;
 }
 /* //Animations Effects */
 .fromBlurToVisible{
@@ -81,6 +85,7 @@ body{
         margin-top: .5em;
         padding-left: 0!important;
         height: fit-content!important;
+        
     }
 
     about #aboutBox .aboutQuote p{
@@ -88,13 +93,17 @@ body{
     }
 
 
-
-    /* //skills */
+    #project > div{
+        height: fit-content!important;
+    }
+    #project ul li {
+        float: none!important;
+        width: 100%!important;
+        margin-top: 5vh!important;
+    }
 
     
-    /* #skillsContainer .skillBox .skillName{
-        width: 40%!important;
-    } */
+    
    
 
    
@@ -107,6 +116,9 @@ body{
 @media only screen and (min-width : 601px) and (max-width:1024px){
     header div #headerOptionsBox{
             width: calc(100% - 40%)!important;
+    }
+    #project > div{
+        height: fit-content!important;
     }
 
 }
@@ -185,7 +197,7 @@ profile > div{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.3;
+    opacity: .7;
     z-index: -2;
     
 }
@@ -198,11 +210,18 @@ profile div+div{
     letter-spacing: 2px;
     background-image: none;
     margin-top: -50vh;
-    opacity: 1;
+    opacity: .9;
+    width: 100%;
+    text-align: center;
+    height: 120px;
+    padding-top: 4vh;
+    background-color: #3D444A;
 }
 profile #introductionQuote{
-    font-size: 4vh;
+    font-size: 22px;
     font-family: 'Verdana, Geneva, Tahoma, sans-serif';
+    text-align: left;
+    width: fit-content;
     
 }
 profile .arrowUp{
@@ -218,20 +237,28 @@ profile .arrowUp{
    50% {bottom: 1%;}
 }
 
-
+.section-name{
+    padding-top: 10vh;
+    text-align: center;
+    margin-bottom: 5vh;
+    
+    font-weight: bold;
+}
+.section-name span{
+    padding-top: 0;
+    display: inline-block; width: 80px; border-radius: 100px; height: 5px; background-color: #3D444A;
+}
 
 
 about .about-container{
     width: 100%;
-    padding-top: 7vh;
     padding-bottom: 7vh;
     font-size: medium;
     line-height: 2em;
     font-weight: 400;
     z-index: 25;
-    color: #fff;
+    color: black;
     height: fit-content;
-    background-color: #3D444A;
 }
 
 about #aboutBox div:nth-child(1){
@@ -256,14 +283,16 @@ about  .aboutQuote{
      float: left;
      flex-grow: 1;
     text-align: left;
-    color: whitesmoke;
+    color: black;
+    font-size: large;
+    font-family: 'Flamenco';
     
 }
 
 
-about  .aboutQuote p {
+/* about  .aboutQuote p {
     font-family: 'Flamenco';
-}
+} */
 about  .aboutQuote button{
     background: transparent;
     border-style: solid;
@@ -292,97 +321,80 @@ about  .aboutQuote button:hover{
 }
 
 #skillsContainer ul li{
-    margin-top: 0.5em;
+    margin-top: 0.65em;
 }
 
 #skillsContainer .skillBox{
-    background-color: transparent; width: 100%; height: 30px; display: flex;
-    border-style: solid;
-    border-width: 0 1px 0 0;
-    border-color: gray;
+    background-color: #edeeef; width: 100%; height: 25px; display: flex;
+    
     
 }
 
 #skillsContainer .skillBox .skillName{
-    width: 20%;  background-color: darkslategray; float: left; font-size: 1.6vh; text-align: left;
-    padding-left: .4em;
+    width: 20%;  background-color: lightseagreen; float: left; font-size: 1.6vh;
     border-top-left-radius: 5px; 
     border-bottom-left-radius: 5px ;
+    color: #fff;
+    text-align: center!important;
+    height: 100%;
 
 }
 
 #skillsContainer .skillBox .skillLevel{
       background-color: teal; float: left;
-      color: transparent;     
-      border-top-right-radius: 5px; 
-    border-bottom-right-radius: 5px ;
+      color: transparent;
+      height: 100%;
      
 }
 
 
+#project > div{
+    width: 100%; height: 100vh; background-color:#edeeef;
+}
 
-
-
-
-
-
-
-experience .experience-container{
-    width: 100%;
-    padding: 0;
-    background-color: #13547a ;
-    transform: skewY(-2deg);
-    border-top-left-radius: 35px;
+#project ul li{
+    float: left;
+    width: calc(100% / 3);
     text-align: center;
-   
+    opacity: 1;
 }
 
-experience .experience-container::before{
-    content: "";
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    right: 0;
-    background-color: #13547a;
-    margin-top: -29.52px;
-    z-index: -1;
-}
-
-experience .experience-container::after{
-    content: "";
-    height: 80px;
-    width: 80px;
-    position: absolute;
-    right: 0;
-    background-color: #3D444A;
-    top: -80px;
-    z-index: 1;
-    border-radius: 50%;
-}
-
-
-
-.experience-box{
-padding-top: 5%;
-padding-bottom: 10%;
-}
-
-.experience-box ul{
-    list-style: none;
+#project ul li div{
+    width: 80%; height: 40vh; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
     padding: 0;
-    transform: skewY(2deg);
-    color: #fff; 
+    z-index: 1;
+    border-radius: 5px;
+}
+#project ul li h4{
+    font-weight: bold;
+    color: #3D444A;
+
+}
+#project ul li div div{
+    width: 100%; height: fit-content; background-color: transparent; opacity: 1; color: white;
+    text-align: center;
     
+    z-index: 3;
+}
+#project ul li button{
+    background-color: transparent;
+    margin-top: 50%;
+    color: lightseagreen;
+    border-style: solid;
+    border-width: 2px;
+    border-color: lightseagreen;
+    filter: brightness(250%);
+    
+
 }
 
-.experience-box ul span{
-    background-color: #fff;
-    height: 1px;
-    width: 60%;
-    display: inline-block;
-   
 
-}
+
+
 
 
 

@@ -39,9 +39,11 @@
 
         <profile id="profile"> 
             <div class="container-fluid "></div>
-            <div id="introductionQuote" class="container-fluid"></div>
+            <div class="conatiner-fluid">
+                <div id="introductionQuote" class="container-fluid"></div>
+            </div>
             
-                <div class="arrowUp">
+                <div class="arrowUp" style="background: transparent;">
                    <a href="#about" style="color: #fff;"><i class="glyphicon glyphicon-chevron-up" ></i><br>
                         <i class="glyphicon glyphicon-chevron-up"></i></a></div>
         
@@ -50,15 +52,17 @@
         
         
         <about id="about">
-           
+            <h2 class="section-name">ABOUT
+                <br><span></span></h2>
             <div class="container-fluid about-container">
+                
                 <div  id="aboutBox" class="container-fluid col-md-8 col-md-offset-2 col-xs-12" >
                     <div class="container-fluid" >
                     <div class="container-fluid profileImageContainer" >
                     <img src="assets/profile.jpg" alt="Profile" class="img-circle img-responsive">
                 </div>
                 <div class="conatiner-fluid aboutQuote" >
-                    <h4>About Me</h4>
+                    
                     <p>A Systems Engineer at Infosys & completed B.Tech in Computer Science and Engineering from KIIT University, Bhubansewar, Odisha.</br>
                         Currently working on Front-End and Back-End web developement using Nodejs and JavaScript and also have hands-on experience in Angular, J2EE, MySQL and Spring Framework.</p>
                     <button type="button" class="btn" >Resume&nbsp;<i class="glyphicon glyphicon-download-alt"></i></button>
@@ -138,37 +142,53 @@
 
         </about>
 
-        <experience id="experience">
-            <div class="experience-container">
-                <div class="experience-box">
-                    <ul>
-                        <li><h3>Infosys Limited</h3>
-                            <h4>Systems Engineer</h4>
-                            Sep - 2019 to current</br>
-                            Pune, Maharashtra, India
-                        </li>
-                        <span></span>
-                        <li><h3>Infosys Limited</h3>
-                            <h4>Systems Engineer Trainee</h4>
-                            Dec-2018 to Apr-2019</br>
-                            Mysore, Karnataka, India
-                        </li>
-                        <span></span>
-                    </ul>
-                </div>
-            </div>
-        </experience>
+        
 
-        <!-- <project>
-            <div class="conatiner-fluid" style="width: 100%; height: 550px; background-color: aquamarine; padding: 0;">
-            <div class="col-md-10 col-md-offset-1" style="background-color: brown; height: 400px; margin-top: 5%; padding: 0;">
-            <div class="container" style="width: 20%; height: 100%; background-color: blueviolet; float: left;"></div>
-            <div class="container" style="width: 20%; height: 100%; background-color: blueviolet;"></div>
-            <div class="container" style="width: 10%; height: 100%; background-color: blueviolet; float: right; margin-left: 0;"></div>
+        <project id="project">
+            
+            <div class="conatiner-fluid">
+                <h2 class="section-name">PROJECTS<br><span></span></h2>
+            <div class="col-md-8 col-md-offset-2" style=" margin-top: 5%;">
+                <ul>
+                    <li>
+                        <h4>India Covid-19</h4>
+                        <div class="container-fluid" style="background-image: url('assets/covid_india.jpg');">
+                            
+                            <div class="container-fluid">
+                                <button type="button" class="btn">Read More</button>
+                                </div>
+                                <div class="conatainer-fluid"></div>
+                        </div>
+
+                    </li>
+                    
+                     <li>
+                        <h4>Expense Tracker App</h4>
+                        <div class="container-fluid" style="background-image: url('assets/expense.jpg');">
+                            <div class="container-fluid">
+                                
+                            <button type="button" class="btn">Read More</button>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <h4>Portal</h4>
+                        <div class="container-fluid" style="background-color: #3D444A;">
+                            <div class="container-fluid">
+                                
+                                <button type="button" class="btn">Read More</button>
+                                </div>
+                        </div>
+
+                    </li>
+                    
+                </ul>
+                
             </div>
             </div>
             
 
-        </project> -->
+        </project>
     </body>
 </html>

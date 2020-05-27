@@ -1,4 +1,4 @@
-var intro = 'Hi, I am Rohit Full Stack Developer';
+var intro = 'Hello, Im Rohit Im a full-stack developer';
 var flag = false;
 
 function isOnScreen(elem){
@@ -28,7 +28,7 @@ function writeIntro(elem, intro){
 
         window.setTimeout(function(){
           $elem.append(intro.charAt(i));
-          if(i==3 || i==13) $elem.append('<br>');
+          if(i==15) $elem.append('<br>');
         }, i * 100);
     
       }(i));
@@ -78,7 +78,7 @@ window.addEventListener('load', function(){
 });
 
 $(document).ready( function(){
-        //$(this).scrollTop(0);
+        $(this).scrollTop(0);
         $('#profileIcon span' ).css('background-color','whitesmoke');
     window.addEventListener('unload', function(){
         $(this).addClass('rightToLeftAnimation');
@@ -97,7 +97,7 @@ $(document).ready( function(){
 
         isOnScreen('#profile') ? $('#profileIcon span').css({'background-color':'whitesmoke'}) : $('#profileIcon span').css('background-color','transparent');
         isOnScreen('#about') ? $('#aboutIcon span' ).css('background-color','whitesmoke') : $('#aboutIcon span').css('background-color','transparent');
-        isOnScreen('#experience') ? $('#experienceIcon span' ).css('background-color','whitesmoke') : $('#experienceIcon span').css('background-color','transparent');
+      //  isOnScreen('#experience') ? $('#experienceIcon span' ).css('background-color','whitesmoke') : $('#experienceIcon span').css('background-color','transparent');
         
         isOnScreen($('.aboutQuote')) ? $('.aboutQuote').addClass('fromBlurToVisible') : $('.aboutQuote').removeClass('fromBlurToVisible');
         
@@ -113,7 +113,7 @@ $(document).ready( function(){
                         flag = false;
                         $('.skillLevel').each(function(){
                             
-                            $(this).stop().animate({width : '0vw'}, 500);
+                            $(this).stop().animate({width : '-10%'}, 500);
                         });
 
             
