@@ -1,0 +1,388 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color:#3D444A!important;
+    color: #fff!important;
+    
+}
+/* //Animations Effects */
+.fromBlurToVisible{
+    animation-name: blurToVisible;
+    animation-duration: 3s;
+}
+@keyframes blurToVisible{
+    0%{opacity: 0;};
+    25%{opacity: .25;};
+    50%{opacity: .50;};
+    75%{opacity: .75;};
+    100%{opacity: 1;};
+}
+
+
+.rightToLeftAnimation{
+    animation-name: headerBox;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes headerBox{
+    from {right:-100vw}
+    to {right:0}
+}
+
+
+
+
+
+/* for mobile */
+@media screen and (max-width: 600px){
+
+    /* header */
+    header div{
+        padding: 0!important;
+        position: sticky!important;
+        top: 0!important;
+        
+        background: transparent!important;
+    }
+    header div #headerOptionsBox{
+        float: none!important;
+        width: 100%!important;
+        padding-top: .7em!important;
+        background-color: whitesmoke  !important;
+    }
+   
+   
+    .sticky{
+        position: fixed!important;
+        top: 0!important;
+    }
+
+    /* profile */
+    profile div{
+        width: 100%!important;
+        flex: 100%!important;
+    }
+
+    /* about */
+   
+
+    about #aboutBox div:nth-child(1){
+        display: block!important;
+    }
+    
+   
+    about #aboutBox .aboutQuote{
+        margin-top: .5em;
+        padding-left: 0!important;
+        height: fit-content!important;
+    }
+
+    about #aboutBox .aboutQuote p{
+        padding-left: 0.2em!important;
+    }
+
+
+
+    /* //skills */
+
+    
+    /* #skillsContainer .skillBox .skillName{
+        width: 40%!important;
+    } */
+   
+
+   
+  
+
+    
+   
+}
+
+@media only screen and (min-width : 601px) and (max-width:1024px){
+    header div #headerOptionsBox{
+            width: calc(100% - 40%)!important;
+    }
+
+}
+
+
+
+
+
+
+
+/* header */
+
+header div{
+    
+    width: 100%;   
+    text-align: right;
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    z-index: 20;
+}
+
+header div #headerOptionsBox{
+    right: 0;
+    background-color: whitesmoke;
+    padding-top: 0.9em;
+    width: calc(100% - 65%);
+    height: 40px;
+    
+    
+    
+}
+
+
+
+
+header ul{
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+header ul li a img{
+    width: 20px;
+    height: 20px;
+    
+}
+header div ul li{
+    float: left;
+    width: calc(100% / 6);
+    text-align: center;
+    opacity: 1;
+    
+}
+
+header div ul li a p span{
+    height: 0.5vh;
+    width: 30px;
+    
+    display: inline-block;
+    border-radius: 20%;
+    
+}
+
+
+
+
+
+/* profile */
+profile > div{
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('assets/computer.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -2;
+    
+}
+
+
+profile div+div{
+    color: whitesmoke;    
+    position: absolute;
+    z-index: 0;
+    letter-spacing: 2px;
+    background-image: none;
+    margin-top: -50vh;
+    opacity: 1;
+}
+profile #introductionQuote{
+    font-size: 4vh;
+    font-family: 'Verdana, Geneva, Tahoma, sans-serif';
+    
+}
+profile .arrowUp{
+    width: 100%;
+    bottom: 0;
+    height: fit-content;
+    text-align: center;
+    animation-name: arrowUpAnimation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes arrowUpAnimation{
+   50% {bottom: 1%;}
+}
+
+
+
+
+about .about-container{
+    width: 100%;
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+    font-size: medium;
+    line-height: 2em;
+    font-weight: 400;
+    z-index: 25;
+    color: #fff;
+    height: fit-content;
+    background-color: #3D444A;
+}
+
+about #aboutBox div:nth-child(1){
+    
+    width: 100%; display: flex; text-align: center;
+    padding: 0;
+}
+about  .profileImageContainer{
+    
+     float: left;
+     text-align: center;
+    height: fit-content;
+    width: fit-content;
+}
+about img{
+    height: 35vh;
+    width: 35vh;    
+    
+}
+about  .aboutQuote{ 
+     padding-left: 5em;
+     float: left;
+     flex-grow: 1;
+    text-align: left;
+    color: whitesmoke;
+    
+}
+
+
+about  .aboutQuote p {
+    font-family: 'Flamenco';
+}
+about  .aboutQuote button{
+    background: transparent;
+    border-style: solid;
+    border-color: teal;
+    color: teal;
+    border-width: 2px;
+    opacity: 1;
+    font-weight: 700;
+    font-size: medium;
+}
+
+about  .aboutQuote button:hover{
+    border-color: teal;
+    color: teal;
+}
+
+
+
+
+
+
+#skillsContainer{
+    width: 100%; padding:0;height: fit-content; background-color: transparent; z-index: 100; margin-top: 50px;
+    margin-bottom: 40px;
+
+}
+
+#skillsContainer ul li{
+    margin-top: 0.5em;
+}
+
+#skillsContainer .skillBox{
+    background-color: transparent; width: 100%; height: 30px; display: flex;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    border-color: gray;
+    
+}
+
+#skillsContainer .skillBox .skillName{
+    width: 20%;  background-color: darkslategray; float: left; font-size: 1.6vh; text-align: left;
+    padding-left: .4em;
+    border-top-left-radius: 5px; 
+    border-bottom-left-radius: 5px ;
+
+}
+
+#skillsContainer .skillBox .skillLevel{
+      background-color: teal; float: left;
+      color: transparent;     
+      border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px ;
+     
+}
+
+
+
+
+
+
+
+
+
+experience .experience-container{
+    width: 100%;
+    padding: 0;
+    background-color: #13547a ;
+    transform: skewY(-2deg);
+    border-top-left-radius: 35px;
+    text-align: center;
+   
+}
+
+experience .experience-container::before{
+    content: "";
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: 0;
+    background-color: #13547a;
+    margin-top: -29.52px;
+    z-index: -1;
+}
+
+experience .experience-container::after{
+    content: "";
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    right: 0;
+    background-color: #3D444A;
+    top: -80px;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+
+
+.experience-box{
+padding-top: 5%;
+padding-bottom: 10%;
+}
+
+.experience-box ul{
+    list-style: none;
+    padding: 0;
+    transform: skewY(2deg);
+    color: #fff; 
+    
+}
+
+.experience-box ul span{
+    background-color: #fff;
+    height: 1px;
+    width: 60%;
+    display: inline-block;
+   
+
+}
+
+
+
