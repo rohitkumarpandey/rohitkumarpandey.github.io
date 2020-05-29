@@ -78,7 +78,7 @@ window.addEventListener('load', function(){
 });
 
 $(document).ready( function(){
-        $(this).scrollTop(0);
+       // $(this).scrollTop(0);
         $('#profileIcon span' ).css('background-color','whitesmoke');
     window.addEventListener('unload', function(){
         $(this).addClass('rightToLeftAnimation');
@@ -119,6 +119,12 @@ $(document).ready( function(){
             
         }
            }
+
+        //    if(isOnScreen('section-name')){
+        //        $(this).each( function(){
+        //            console.log('scrolled');
+        //        });
+        //    }
         
     });
 });

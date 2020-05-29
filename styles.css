@@ -121,6 +121,12 @@ ul{
         height: fit-content!important;
     }
 
+    #skillsContainer .skillBox .skillName{
+        font-size: small!important;
+        text-align: center!important;
+    }
+   
+
 }
 
 
@@ -286,6 +292,7 @@ about  .aboutQuote{
     color: black;
     font-size: large;
     font-family: 'Flamenco';
+    font-weight:500;
     
 }
 
@@ -331,11 +338,11 @@ about  .aboutQuote button:hover{
 }
 
 #skillsContainer .skillBox .skillName{
-    width: 20%;  background-color: lightseagreen; float: left; font-size: 1.6vh;
+    width: 20%;  background-color: cadetblue; float: left; font-size: 1.6vh;
     border-top-left-radius: 5px; 
     border-bottom-left-radius: 5px ;
     color: #fff;
-    text-align: center!important;
+    text-align: center;
     height: 100%;
 
 }
@@ -359,34 +366,60 @@ about  .aboutQuote button:hover{
     opacity: 1;
 }
 
-#project ul li div{
-    width: 80%; height: 40vh; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 1;
-    padding: 0;
-    z-index: 1;
-    border-radius: 5px;
-}
+
 #project ul li h4{
     font-weight: bold;
-    color: #3D444A;
+    color: lightblue;
+    text-align: left;
 
 }
-#project ul li div div{
-    width: 100%; height: fit-content; background-color: transparent; opacity: 1; color: white;
-    text-align: center;
+
+#project ul li > div{
+    width: 80%; height: 35vh;
+    opacity: 1;
+    z-index: 1;
+    border-radius: 5px;
+    padding: 1.5em;
+    background-color: #3D444A;
+
+   
+}
+#project ul li div div p{
+    text-align: justify;
+    justify-content: center;
+    padding: 0;
+    font-family: 'Flamenco';
+    font-size: medium;
+    font-weight: bold;
+    color: cadetblue;
+    filter: brightness(100%);
     
+}
+
+#project ul li div div{
+    width: 100%; height: fit-content;
+    opacity: 1;
+     color: black;
+    text-align: center;
+    padding: 0.7em;
     z-index: 3;
 }
+#project ul li div+div {
+ text-align: center;
+ height: fit-content;
+ padding: 0;
+ padding-bottom: 1em;
+ border-color: white;
+ 
+}
+
 #project ul li button{
     background-color: transparent;
-    margin-top: 50%;
-    color: lightseagreen;
+    
+    color: rgb(11, 58, 202);
     border-style: solid;
     border-width: 2px;
-    border-color: lightseagreen;
+    border-color: rgb(11, 58, 202);
     filter: brightness(250%);
     
 
