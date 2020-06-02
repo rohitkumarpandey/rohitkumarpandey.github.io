@@ -92,6 +92,10 @@ ul{
         padding-left: 0.2em!important;
     }
 
+    #skillsContainer{
+        width: 100%!important;
+    }
+
 
     #project > div{
         height: fit-content!important;
@@ -226,8 +230,46 @@ profile #introductionQuote{
     font-size: 22px;
     font-family: 'Verdana, Geneva, Tahoma, sans-serif';
     text-align: left;
-    width: fit-content;
+    width: 25vw;
+    height: 10vh;
     
+}
+
+#profile ul{
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    color: #3D444A;
+    
+    background-color: violet;
+}
+.leftToRightAnimation{
+    animation-name: leftToRightAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes leftToRightAnimation{
+    from {left: -100vw; }
+    to{left: 0;}
+}
+#profile ul li{
+    float: left;
+    width: calc(100% / 3);
+}
+#profile ul li button{
+    
+    background-color: transparent;
+    border-color: whitesmoke;
+    border-style: solid;
+    border-width: 1.2px;
+    font-weight: lighter;
+    color: white;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+   
 }
 profile .arrowUp{
     width: 100%;
@@ -321,7 +363,7 @@ about  .aboutQuote button:hover{
 
 
 #skillsContainer{
-    width: 100%; padding:0;height: fit-content; background-color: transparent; z-index: 100; margin-top: 50px;
+    width: 50vw; padding:0;height: fit-content; background-color: transparent; z-index: 100; margin-top: 50px;
     margin-bottom: 40px;
 
 }
@@ -350,6 +392,7 @@ about  .aboutQuote button:hover{
       background-color: teal; float: left;
       color: transparent;
       height: 100%;
+      width: 0;
      
 }
 

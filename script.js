@@ -1,7 +1,7 @@
 var intro = 'Hello, Im Rohit Im a full-stack developer';
 var flag = false;
 
-function isOnScreen(elem){
+function isOnScreen(elem, deltaOffset = 10){
     if(elem.length == 0) return;
 
     var $window = jQuery(window);
@@ -9,9 +9,10 @@ function isOnScreen(elem){
     var  viewport_height = $window.height();
     var viewport_bottom =  viewport_top + viewport_height;
     var $elem = jQuery(elem);
-    var top = $elem.offset().top ;
+    var top = $elem.offset().top + deltaOffset;
     var height = $elem.height();
-    var bottom = top + height + 10;
+    var bottom = top + height;
+   
 
     return( bottom > viewport_top && top < viewport_bottom);
 
@@ -78,7 +79,7 @@ window.addEventListener('load', function(){
 });
 
 $(document).ready( function(){
-       // $(this).scrollTop(0);
+        $(this).scrollTop(0);
         $('#profileIcon span' ).css('background-color','whitesmoke');
     window.addEventListener('unload', function(){
         $(this).addClass('rightToLeftAnimation');
@@ -103,7 +104,7 @@ $(document).ready( function(){
         
 
         
-        if(isOnScreen($('#skillsContainer'))){
+        if(isOnScreen($('#skillsContainer'), 420)){
             
            if(!flag){
               skillLevel();
@@ -120,11 +121,9 @@ $(document).ready( function(){
         }
            }
 
-        //    if(isOnScreen('section-name')){
-        //        $(this).each( function(){
-        //            console.log('scrolled');
-        //        });
-        //    }
+           
+
+       
         
     });
 });
