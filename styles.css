@@ -409,14 +409,14 @@ about  .aboutQuote button:hover{
 }
 
 #project .section-name{
-    color: #3D444A;
+    color: whitesmoke;
 }
 #project .section-name span {
-    background-color: #3D444A;
+    background-color: whitesmoke;
 }
 #project > div{
     width: 100%; height: 100vh;
-     background-color:#fff;
+     background-color:#003152;
 }
 
 #project ul li{

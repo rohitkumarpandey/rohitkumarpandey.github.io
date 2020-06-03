@@ -97,7 +97,7 @@ window.addEventListener('load', function(){
 });
 
 $(document).ready( function(){
-       // $(this).scrollTop(0);
+        $(this).scrollTop(0);
         $('#profile button').addClass('leftToRightAnimation');
         $('#linkContainer').addClass('leftToRightAnimation');
 
