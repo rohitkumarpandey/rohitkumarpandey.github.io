@@ -1,5 +1,6 @@
 var intro = 'Hello, Im Rohit Im a full-stack developer.';
 var flag = false;
+var animateHobbiesFlag = false;
 
 function isOnScreen(elem, deltaOffset = 5){
     if(elem.length == 0) return;
@@ -69,21 +70,38 @@ function skillLevel(){
 
 }
 
+function showHobbies(){
+    var animationDuration = 800;
+    $('#likes-container div ul li:nth-child(1) div').animate({left : '0' } , animationDuration,
+    function(){
+        $('#likes-container div ul li:nth-child(2) div').animate({left : '0' }, animationDuration,
+        function(){
+        $('#likes-container div ul li:nth-child(3) div').animate({left : '0' },animationDuration,
+        function(){
+        $('#likes-container div ul li:nth-child(4) div').animate({left : '0' },animationDuration);
+    });
+    } );
+    });
+    
+
+}
+
 
 window.addEventListener('load', function(){
     $('#headerOptionsBox').addClass('rightToLeftAnimation');
     $('#profileIcon span' ).css('background-color','whitesmoke');
 
     writeIntro('#introductionQuote', intro);
+    if(isOnScreen($('#likes-container'))) showHobbies();
 
 });
 
 $(document).ready( function(){
-        $(this).scrollTop(0);
+       // $(this).scrollTop(0);
         $('#profile button').addClass('leftToRightAnimation');
         $('#linkContainer').addClass('leftToRightAnimation');
 
-        
+
         window.addEventListener('unload', function(){
         writeIntro('#introductionQuote', intro);
         $('#profile button').addClass('leftToRightAnimation');
@@ -100,10 +118,10 @@ $(document).ready( function(){
     window.addEventListener('scroll', function(){
 
         isOnScreen('#profile') ? $('#profileIcon span').css({'background-color':'whitesmoke'}) : $('#profileIcon span').css('background-color','transparent');
-        isOnScreen('#about') ? $('#aboutIcon span' ).css('background-color','whitesmoke') : $('#aboutIcon span').css('background-color','transparent');
+      //  isOnScreen('#about') ? $('#aboutIcon span' ).css('background-color','whitesmoke') : $('#aboutIcon span').css('background-color','transparent');
       //  isOnScreen('#experience') ? $('#experienceIcon span' ).css('background-color','whitesmoke') : $('#experienceIcon span').css('background-color','transparent');
         
-        isOnScreen($('.aboutQuote')) ? $('.aboutQuote').addClass('fromBlurToVisible') : $('.aboutQuote').removeClass('fromBlurToVisible');
+       
         
 
         
@@ -123,6 +141,23 @@ $(document).ready( function(){
             
         }
            }
+
+           if(isOnScreen($('#likes-container'))) showHobbies();
+
+        //    if(isOnScreen($('#likes-container div h2'), 420))
+        //    {
+        //       if(!animateHobbiesFlag){
+        //           showHobbies();
+        //           this.console.log(animateHobbiesFlag);
+        //           animateHobbiesFlag = true;
+        //       }else{
+        //           if(animateHobbiesFlag){
+        //               this.console.log(animateHobbiesFlag)
+        //               animateHobbiesFlag = false;
+        //               $('#likes-container div ul li div').animate({left : '-100vw' }, 400);
+        //           }
+        //       }
+        //   }
 
            
 
