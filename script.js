@@ -1,7 +1,7 @@
-var intro = 'Hello, Im Rohit Im a full-stack developer';
+var intro = 'Hello, Im Rohit Im a full-stack developer.';
 var flag = false;
 
-function isOnScreen(elem, deltaOffset = 10){
+function isOnScreen(elem, deltaOffset = 5){
     if(elem.length == 0) return;
 
     var $window = jQuery(window);
@@ -30,7 +30,7 @@ function writeIntro(elem, intro){
         window.setTimeout(function(){
           $elem.append(intro.charAt(i));
           if(i==15) $elem.append('<br>');
-        }, i * 100);
+        }, i * 40);
     
       }(i));
     }
@@ -80,11 +80,14 @@ window.addEventListener('load', function(){
 
 $(document).ready( function(){
         $(this).scrollTop(0);
-        $('#profileIcon span' ).css('background-color','whitesmoke');
-    window.addEventListener('unload', function(){
-        $(this).addClass('rightToLeftAnimation');
+        $('#profile button').addClass('leftToRightAnimation');
+        $('#linkContainer').addClass('leftToRightAnimation');
+
+        
+        window.addEventListener('unload', function(){
         writeIntro('#introductionQuote', intro);
-        $('#profileIcon span' ).css('background-color','whitesmoke');
+        $('#profile button').addClass('leftToRightAnimation');
+        $('#linkContainer').addClass('leftToRightAnimation');
        
     });
     
