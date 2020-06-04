@@ -118,9 +118,19 @@ ul{
     #education-container div div{
         width: 100%!important;
     }
+
+    #likes-container > div{
+        height: 110vh!important;
+    }
     #likes-container div ul li .like{
         width: 80vw!important;
     }
+
+    #contact > div > div{
+        width: 80%!important;
+    }
+
+   
 
     
     
@@ -387,7 +397,7 @@ about  .aboutQuote button:hover{
 }
 
 #skillsContainer .skillBox{
-    background-color: #edeeef; width: 100%; height: 25px; display: flex;
+    background-color: rgba(220, 220, 220, 0.486); width: 100%; height: 25px; display: flex;
     
     
 }
@@ -515,7 +525,7 @@ about  .aboutQuote button:hover{
 
 #likes-container div{
     width: 100%;
-    height: 100vh;
+    height: 140vh;
     padding-left: 0;
     background-color: #003152;
 }
@@ -556,48 +566,91 @@ about  .aboutQuote button:hover{
 
 #contact > div{
     width: 100%;
-    height: 100vh;
+    height: fit-content;
     padding: 0;
-    
-}
-
-#slantdiv{
-    width: 100%;
-    height:80vh;
-    background-color: #003152;
-    padding: 0;
+    background-color: black;
     position: relative;
-
+    padding-bottom: 2em;
+    z-index: 1;
 }
 
-#slantdiv::before{
+#contact > div::before{
     content: '';
+    width: 60%;
     position: absolute;
-    height: 20vh;
-    width: 50%;
+    height: 125px;
     left: 0;
-    top: 70vh;
-    transform: skewY(15deg);
-    background-color: #003152;
+    top: -50px;
+    background-color: black;
+    transform: skewY(10deg);
     z-index: -1;
-    
 }
-#slantdiv::after{
+#contact > div::after{
     content: '';
+    width: 60%;
     position: absolute;
-    height: 20vh;
-    width: 50%;
+    height: 125px;
     right: 0;
-    top: 70vh;
-    transform: skewY(-15deg);
-    background-color: #003152;
+    top: -50px;
+    background-color: black;
+    transform: skewY(-10deg);
     z-index: -1;
+}
+
+#contact .section-name{
+    color: #fff;
+    z-index: 1;
+    margin-top: 0;
+    padding-top: 5vh;
+}
+#contact > div > div{
+ width: 40%;
+ padding: 2em;
+ text-align: center;
+ background-color: #1e272c;
+ border-radius: 10px;
+}
+#contact form > div{
+    width: 100%;
+    border-radius: 50px;
     
 }
 
+#contact form input, #contact form textarea{
+    background-color: #1e272c;
+    color: whitesmoke;
+    font-weight: lighter;
+}
 
 
+#contact form a{
+    color: black;
+    float: right;
+    background-color: #0e4d92;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
 
+#contact strong{
+    float: left;
+    color: firebrick;
+    letter-spacing: .1em;
+}
 
+#contact div div ul{
+    list-style-type: none;
+    padding: 0;
+}
 
+#contact div div ul li{
+    float: left;
+    width: calc(100% / 4);
+}
+
+#contact div div ul li img{
+    width: 40px;
+    height: 40px;
+}
 

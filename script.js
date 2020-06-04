@@ -73,7 +73,7 @@ function skillLevel(){
 function showHobbies(){
     var animationDuration = 800;
     $('#likes-container div ul li:nth-child(1) div').animate({left : '0' } , animationDuration,
-    function(){
+        function(){
         $('#likes-container div ul li:nth-child(2) div').animate({left : '0' }, animationDuration,
         function(){
         $('#likes-container div ul li:nth-child(3) div').animate({left : '0' },animationDuration,
@@ -86,6 +86,12 @@ function showHobbies(){
 
 }
 
+function sendEmail(){
+    console.log('email')
+}
+
+
+
 
 window.addEventListener('load', function(){
     $('#headerOptionsBox').addClass('rightToLeftAnimation');
@@ -97,7 +103,7 @@ window.addEventListener('load', function(){
 });
 
 $(document).ready( function(){
-        $(this).scrollTop(0);
+       // $(this).scrollTop(0);
         $('#profile button').addClass('leftToRightAnimation');
         $('#linkContainer').addClass('leftToRightAnimation');
 
@@ -108,10 +114,6 @@ $(document).ready( function(){
         $('#linkContainer').addClass('leftToRightAnimation');
        
     });
-    
-  
-
-   
     
 
    
@@ -142,14 +144,14 @@ $(document).ready( function(){
         }
            }
 
-           if(isOnScreen($('#likes-container'))) showHobbies();
+           if(isOnScreen($('#likes-container'), 420)) showHobbies();
 
-        //    if(isOnScreen($('#likes-container div h2'), 420))
-        //    {
+        //    if(isOnScreen($('#likes-container'), 100)){
         //       if(!animateHobbiesFlag){
         //           showHobbies();
         //           this.console.log(animateHobbiesFlag);
         //           animateHobbiesFlag = true;
+        //       }
         //       }else{
         //           if(animateHobbiesFlag){
         //               this.console.log(animateHobbiesFlag)
@@ -157,11 +159,45 @@ $(document).ready( function(){
         //               $('#likes-container div ul li div').animate({left : '-100vw' }, 400);
         //           }
         //       }
-        //   }
+          
 
            
 
        
         
     });
+
+
+    
+    //sending Email
+$('#sendEmailBtn').click(function(event){
+    
+    var name = $('form #name').val();
+    var subject = $('form #subject').val();
+    var body = $('form #body').val();
+    $('form #name').css({'background-color': '#1e272c'});
+    $('form #subject').css({'background-color': '#1e272c'});
+    $('form #body').css({'background-color': '#1e272c'});
+    if(name.length == 0){
+        $('#statusMessage').text('*Please Enter Your Name');
+        $('form #name').css({'background-color': 'firebrick'});
+        event.preventDefault();
+    }else if(subject.length == 0){
+        $('#statusMessage').text('*Please Enter Subject');
+        $('form #subject').css({'background-color': 'firebrick'});
+        event.preventDefault();
+    }else if(body.length == 0){
+        $('#statusMessage').text('*Please Write Your Message');
+        $('form #body').css({'background-color': 'firebrick'});
+        event.preventDefault();
+    }else{
+    var mailLink = 'mailto:rdxi77@gmail.com?subject='+subject+'&body='+name+'    '+body;
+    console.log(mailLink);
+    $('#sendEmailBtn').attr("href",mailLink);
+    }
+
+
+    
+});
+    
 });
