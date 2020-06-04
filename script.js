@@ -103,10 +103,11 @@ window.addEventListener('load', function(){
 });
 
 $(document).ready( function(){
-       // $(this).scrollTop(0);
+        $(this).scrollTop(0);
         $('#profile button').addClass('leftToRightAnimation');
         $('#linkContainer').addClass('leftToRightAnimation');
-
+        
+        isOnScreen('#profile') ? $('#scrollTopButton div').hide() :$('#scrollTopButton div').show();
 
         window.addEventListener('unload', function(){
         writeIntro('#introductionQuote', intro);
@@ -119,7 +120,9 @@ $(document).ready( function(){
    
     window.addEventListener('scroll', function(){
 
-        isOnScreen('#profile') ? $('#profileIcon span').css({'background-color':'whitesmoke'}) : $('#profileIcon span').css('background-color','transparent');
+        isOnScreen('#profile') ? $('#scrollTopButton div').hide() :$('#scrollTopButton div').show();
+
+
       //  isOnScreen('#about') ? $('#aboutIcon span' ).css('background-color','whitesmoke') : $('#aboutIcon span').css('background-color','transparent');
       //  isOnScreen('#experience') ? $('#experienceIcon span' ).css('background-color','whitesmoke') : $('#experienceIcon span').css('background-color','transparent');
         

@@ -6,7 +6,7 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color:#3D444A!important;
+    background-color:#17223B!important;
     color: whitesmoke!important;
     
 }
@@ -91,8 +91,9 @@ ul{
     
    
     about #aboutBox .aboutQuote{
-        margin-top: .5em;
+        margin-top: 1em;
         padding-left: 0!important;
+        text-align: center!important;
         height: fit-content!important;
         
     }
@@ -173,61 +174,16 @@ ul{
 
 
 
-/* header */
-
-header div{
-    
-    width: 100%;   
-    text-align: right;
-}
-.sticky{
-    position: fixed;
-    top: 0;
-    z-index: 20;
+#scrollTopButton div{
+    position: fixed; bottom: 10px; right: 10px; line-height: 40px;
+           width: 40px; background-color:darkslategray; z-index: 200;  text-align: center;
+           border-radius: 20%;
 }
 
-header div #headerOptionsBox{
-    right: 0;
-    background-color: whitesmoke;
-    padding-top: 0.9em;
-    width: calc(100% - 65%);
-    height: 40px;
-    
-    
-    
+#scrollTopButton div a i{
+    vertical-align: middle;
+    color: white;
 }
-
-
-
-
-header ul{
-    list-style-type: none;
-    padding: 0;
-    
-}
-
-header ul li a img{
-    width: 20px;
-    height: 20px;
-    
-}
-header div ul li{
-    float: left;
-    width: calc(100% / 6);
-    text-align: center;
-    opacity: 1;
-    
-}
-
-header div ul li a p span{
-    height: 0.5vh;
-    width: 30px;
-    
-    display: inline-block;
-    border-radius: 20%;
-    
-}
-
 
 
 
@@ -336,35 +292,33 @@ about #aboutBox div:nth-child(1){
     
     width: 100%; display: flex; text-align: center;
     padding: 0;
-}
-about  .profileImageContainer{
     
-     float: left;
+}
+#about  .profileImageContainer{
+    
+    
      text-align: center;
-    height: fit-content;
-    width: fit-content;
+    height: 100%;
 }
 about img{
-    height: 35vh;
-    width: 35vh;    
+    height: 200px;
+    width: 200px;   
     
 }
 about  .aboutQuote{ 
-     padding-left: 5em;
-     float: left;
-     flex-grow: 1;
+    float: left;
+    flex-grow: 1;
     text-align: left;
     color: whitesmoke;
     font-size: large;
     font-family: 'Flamenco';
     font-weight:500;
+    justify-content: center;
     
 }
 
 
-/* about  .aboutQuote p {
-    font-family: 'Flamenco';
-} */
+
 about  .aboutQuote button{
     background: transparent;
     border-style: solid;
@@ -397,13 +351,13 @@ about  .aboutQuote button:hover{
 }
 
 #skillsContainer .skillBox{
-    background-color: rgba(220, 220, 220, 0.486); width: 100%; height: 25px; display: flex;
+    background-color:#003366; width: 100%; height: 25px; display: flex;
     
     
 }
 
 #skillsContainer .skillBox .skillName{
-    width: 20%;  background-color: darkslategray; float: left; font-size: 1.6vh;
+    width: 20%;  background-color: #0e4d92; float: left; font-size: 1.6vh;
     color: #fff;
     text-align: center;
     height: 100%;
@@ -411,7 +365,7 @@ about  .aboutQuote button:hover{
 }
 
 #skillsContainer .skillBox .skillLevel{
-      background-color: teal; float: left;
+      background-color: dodgerblue; float: left;
       color: transparent;
       height: 100%;
       width: 0;
@@ -439,31 +393,30 @@ about  .aboutQuote button:hover{
 
 #project ul li h4{
     font-weight: bold;
-    color: #4682b4;
-    text-align: center;
+    color: #003152;
+    text-align: left;
 
 }
 
 #project ul li > div{
-    width: 80%; height: 35vh;
+    width: 80%; height: 45vh;
     opacity: 1;
     z-index: 1;
     border-radius: 5px;
     padding: 1.5em;
-    background-color: white;
+    background-color: whitesmoke;
     text-align: center;
 
    
 }
 #project ul li div div p{
-    text-align: justify;
+    text-align: left;
     justify-content: center;
     padding: 0;
-    font-family: 'Flamenco';
-    font-size: medium;
-    font-weight: bold;
-    color: #3D444A;
+    font-size: larger;
     filter: brightness(100%);
+    font-family: 'Flamenco';
+    height: 18vh;
     
 }
 
@@ -568,7 +521,7 @@ about  .aboutQuote button:hover{
     width: 100%;
     height: fit-content;
     padding: 0;
-    background-color: black;
+    background-color: #020001;
     position: relative;
     padding-bottom: 2em;
     z-index: 1;
@@ -581,7 +534,7 @@ about  .aboutQuote button:hover{
     height: 125px;
     left: 0;
     top: -50px;
-    background-color: black;
+    background-color: #020001;
     transform: skewY(10deg);
     z-index: -1;
 }
@@ -592,7 +545,7 @@ about  .aboutQuote button:hover{
     height: 125px;
     right: 0;
     top: -50px;
-    background-color: black;
+    background-color: #020001;
     transform: skewY(-10deg);
     z-index: -1;
 }
@@ -607,7 +560,7 @@ about  .aboutQuote button:hover{
  width: 40%;
  padding: 2em;
  text-align: center;
- background-color: #1e272c;
+ background-color:  #16161d;
  border-radius: 10px;
 }
 #contact form > div{
@@ -617,7 +570,7 @@ about  .aboutQuote button:hover{
 }
 
 #contact form input, #contact form textarea{
-    background-color: #1e272c;
+    background-color: #16161d;
     color: whitesmoke;
     font-weight: lighter;
 }
@@ -626,11 +579,12 @@ about  .aboutQuote button:hover{
 #contact form a{
     color: black;
     float: right;
-    background-color: #0e4d92;
-    padding: 1em;
+    background-color: darkcyan;
+    padding: .6em;
     color: white;
     text-decoration: none;
     font-weight: bolder;
+    border-radius: 5px;
 }
 
 #contact strong{
