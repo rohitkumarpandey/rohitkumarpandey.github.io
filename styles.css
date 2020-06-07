@@ -6,8 +6,8 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color:#17223B!important;
-    color: whitesmoke!important;
+    background-color:#edeeef!important;
+    color: #16161d!important;
     
 }
 
@@ -269,6 +269,7 @@ profile .arrowUp{
     text-align: center;
     margin-bottom: 10vh; 
     font-weight: bold;
+    color: whitesmoke;
 }
 .section-name span{
     padding-top: 0;
@@ -284,8 +285,14 @@ about .about-container{
     line-height: 2em;
     font-weight: 400;
     z-index: 25;
-    color: whitesmoke;
+    color: #16161d;
     height: fit-content;
+}
+#about .section-name{
+    color: #16161d;
+}
+#about .section-name span{
+    background-color: #16161d;
 }
 
 about #aboutBox div:nth-child(1){
@@ -309,11 +316,10 @@ about  .aboutQuote{
     float: left;
     flex-grow: 1;
     text-align: left;
-    color: whitesmoke;
+    color: #16161d;
     font-size: large;
     font-family: 'Flamenco';
     font-weight:500;
-    justify-content: center;
     
 }
 
@@ -328,6 +334,7 @@ about  .aboutQuote button{
     opacity: 1;
     font-weight: 700;
     font-size: medium;
+    float: left;
 }
 
 about  .aboutQuote button:hover{
@@ -351,7 +358,7 @@ about  .aboutQuote button:hover{
 }
 
 #skillsContainer .skillBox{
-    background-color:#003366; width: 100%; height: 25px; display: flex;
+    background-color:lavender; width: 100%; height: 25px; display: flex;
     
     
 }
@@ -365,7 +372,7 @@ about  .aboutQuote button:hover{
 }
 
 #skillsContainer .skillBox .skillLevel{
-      background-color: dodgerblue; float: left;
+      background-color: #003366; float: left;
       color: transparent;
       height: 100%;
       width: 0;
