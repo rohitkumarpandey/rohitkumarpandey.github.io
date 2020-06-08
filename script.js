@@ -30,6 +30,7 @@ function writeIntro(elem, intro){
 
         window.setTimeout(function(){
           $elem.append(intro.charAt(i));
+          
           if(i==15) $elem.append('<br>');
         }, i * 40);
     
@@ -103,7 +104,7 @@ window.addEventListener('load', function(){
 });
 
 $(document).ready( function(){
-        $(this).scrollTop(0);
+       // $(this).scrollTop(0);
         $('#profile button').addClass('leftToRightAnimation');
         $('#linkContainer').addClass('leftToRightAnimation');
         
@@ -183,15 +184,15 @@ $('#sendEmailBtn').click(function(event){
     $('form #body').css({'background-color': '#1e272c'});
     if(name.length == 0){
         $('#statusMessage').text('*Please Enter Your Name');
-        $('form #name').css({'background-color': 'firebrick'});
+        $('form #name').css({'background-color': 'lightslategrey'});
         event.preventDefault();
     }else if(subject.length == 0){
         $('#statusMessage').text('*Please Enter Subject');
-        $('form #subject').css({'background-color': 'firebrick'});
+        $('form #subject').css({'background-color': 'gainsboro'});
         event.preventDefault();
     }else if(body.length == 0){
         $('#statusMessage').text('*Please Write Your Message');
-        $('form #body').css({'background-color': 'firebrick'});
+        $('form #body').css({'background-color': 'gainsboro'});
         event.preventDefault();
     }else{
     var mailLink = 'mailto:rdxi77@gmail.com?subject='+subject+'&body='+name+'    '+body;

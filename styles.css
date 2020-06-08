@@ -176,8 +176,9 @@ ul{
 
 #scrollTopButton div{
     position: fixed; bottom: 10px; right: 10px; line-height: 40px;
-           width: 40px; background-color:darkslategray; z-index: 200;  text-align: center;
+           width: 40px; background-color:#16161d; z-index: 200;  text-align: center;
            border-radius: 20%;
+           opacity: .75;
 }
 
 #scrollTopButton div a i{
@@ -193,7 +194,7 @@ profile > div{
     padding: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('assets/love_wallpaper.jpg');
+    background-image: url('assets/wallpaperflare.com_wallpaper.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -528,7 +529,6 @@ about  .aboutQuote button:hover{
     width: 100%;
     height: fit-content;
     padding: 0;
-    background-color: #020001;
     position: relative;
     padding-bottom: 2em;
     z-index: 1;
@@ -541,7 +541,7 @@ about  .aboutQuote button:hover{
     height: 125px;
     left: 0;
     top: -50px;
-    background-color: #020001;
+    background-color: #edeeef;
     transform: skewY(10deg);
     z-index: -1;
 }
@@ -552,16 +552,19 @@ about  .aboutQuote button:hover{
     height: 125px;
     right: 0;
     top: -50px;
-    background-color: #020001;
+    background-color: #edeeef;
     transform: skewY(-10deg);
     z-index: -1;
 }
 
 #contact .section-name{
-    color: #fff;
+    color: #16161d;
     z-index: 1;
     margin-top: 0;
     padding-top: 5vh;
+}
+#contact .section-name span{
+    background-color: #16161d;
 }
 #contact > div > div{
  width: 40%;
@@ -586,7 +589,7 @@ about  .aboutQuote button:hover{
 #contact form a{
     color: black;
     float: right;
-    background-color: darkcyan;
+    background-color: #0e4d92;
     padding: .6em;
     color: white;
     text-decoration: none;
@@ -596,7 +599,7 @@ about  .aboutQuote button:hover{
 
 #contact strong{
     float: left;
-    color: firebrick;
+    color: gainsboro;
     letter-spacing: .1em;
 }
 
