@@ -104,11 +104,13 @@ window.addEventListener('load', function(){
 });
 
 $(document).ready( function(){
-       // $(this).scrollTop(0);
+        $(this).scrollTop(0);
         $('#profile button').addClass('leftToRightAnimation');
         $('#linkContainer').addClass('leftToRightAnimation');
         
         isOnScreen('#profile') ? $('#scrollTopButton div').hide() :$('#scrollTopButton div').show();
+        //tooltip
+        $('[data-toggle="tooltip"]').tooltip();
 
         window.addEventListener('unload', function(){
         writeIntro('#introductionQuote', intro);
@@ -133,19 +135,9 @@ $(document).ready( function(){
         
         if(isOnScreen($('#skillsContainer'), 420)){
             
-           if(!flag){
+           
               skillLevel();
-              flag = true;            } 
-           }else{
-               if(flag){
-                        flag = false;
-                        $('.skillLevel').each(function(){
-                            
-                            $(this).stop().animate({width : '-10%'}, 500);
-                        });
-
             
-        }
            }
 
            if(isOnScreen($('#likes-container'), 420)) showHobbies();
