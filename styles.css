@@ -180,11 +180,13 @@ ul{
 
 
 
+
+
 #scrollTopButton div{
     position: fixed; bottom: 10px; right: 10px; line-height: 40px;
-           width: 40px; background-color:#16161d; z-index: 200;  text-align: center;
-           border-radius: 20%;
-           opacity: .75;
+    width: 40px; background-color:#16161d; z-index: 200;  text-align: center;
+    border-radius: 20%;
+    opacity: .75;
 }
 
 #scrollTopButton div a i{
@@ -273,6 +275,7 @@ profile .arrowUp{
     animation-name: arrowUpAnimation;
     animation-duration: 1s;
     animation-iteration-count: infinite;
+    vertical-align: middle;
 }
 @keyframes arrowUpAnimation{
    50% {bottom: 1%;}
@@ -374,13 +377,13 @@ about  .aboutQuote button:hover{
 }
 
 #skillsContainer .skillBox{
-    background-color:lavender; width: 100%; height: 25px; display: flex;
+    background-color:white; width: 100%; height: 25px; display: flex;
     
     
 }
 
 #skillsContainer .skillBox .skillName{
-    width: 20%;  background-color: darkcyan; float: left; font-size: 1.6vh;
+    width: 20%;  background-color: teal; float: left; font-size: 1.6vh;
     color: #fff;
     text-align: center;
     height: 100%;
@@ -388,7 +391,7 @@ about  .aboutQuote button:hover{
 }
 
 #skillsContainer .skillBox .skillLevel{
-      background-color: lightseagreen; float: left;
+      background-color: darkcyan; float: left;
       color: transparent;
       height: 100%;
       width: 0;
