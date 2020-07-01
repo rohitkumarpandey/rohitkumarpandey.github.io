@@ -105,7 +105,8 @@ window.addEventListener('load', function(){
 
 $(document).ready( function(){
         $(this).scrollTop(0);
-        $('#profile button').addClass('leftToRightAnimation');
+        $('#profile button:nth-child(1)').addClass('leftToRightAnimation');
+        $('#profile button:nth-child(2)').addClass('rightToLeftAnimation');
         $('#linkContainer').addClass('leftToRightAnimation');
         
         isOnScreen('#profile') ? $('#scrollTopButton div').hide() :$('#scrollTopButton div').show();
@@ -115,6 +116,8 @@ $(document).ready( function(){
         window.addEventListener('unload', function(){
         writeIntro('#introductionQuote', intro);
         $('#profile button').addClass('leftToRightAnimation');
+        
+        $('#hackerRankBtn').addClass('rightToLeftAnimation');
         $('#linkContainer').addClass('leftToRightAnimation');
        
     });

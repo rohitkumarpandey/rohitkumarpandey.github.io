@@ -38,12 +38,13 @@ ul{
 }
 
 .rightToLeftAnimation{
-    animation-name: headerBox;
+    animation-name: rightToLeftAnimation;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 }
 
-@keyframes headerBox{
+@keyframes rightToLeftAnimation{
     from {right:-100vw}
     to {right:0}
 }
@@ -202,7 +203,7 @@ ul{
     padding: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('assets/blackwallpaper.jpg');
+    background-image: url('assets/pxfuel3.com.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -213,7 +214,7 @@ ul{
 
 
 #profile div+div{
-    color: white;    
+    color: aliceblue;    
     position: absolute;
     z-index: 0;
     letter-spacing: 2px;
@@ -224,8 +225,8 @@ ul{
     text-align: center;
     height: 130px;
     padding-top: 4vh;
-    background-color: white;
-    opacity: .90;
+    
+    background-color: aliceblue;
 }
 #profile #introductionQuote{
     font-size: 22px;
@@ -233,7 +234,7 @@ ul{
     text-align: left;
     width: 25vw;
     height: 10vh;
-    color: black;
+    color: #003152;
     font-weight:bolder ;
     
 }
