@@ -98,7 +98,7 @@
 
         writeIntro('#introductionQuote', intro);
         if(isOnScreen($('#likes-container'))) showHobbies();
-        if(isOnScreen('#about')) $('#about #profileImage').addClass('profileImageEnlarge') ;
+       // if(isOnScreen('#about')) $('#about #profileImage').addClass('profileImageEnlarge') ;
         if(isOnScreen('#about')) $('#about .section-name span').addClass('section-name-span');
         if(isOnScreen('#project')) $('#project .section-name span').addClass('section-name-span');
         if(isOnScreen('#education-container')) $('#education-container .section-name span').addClass('section-name-span');
@@ -108,7 +108,7 @@
     });
 
     $(document).ready( function(){
-        //  $(this).scrollTop(0);
+            //$(this).scrollTop(0);
             $('#profile button:nth-child(1)').addClass('leftToRightAnimation');
             $('#profile button:nth-child(2)').addClass('rightToLeftAnimation');
             $('#linkContainer').addClass('leftToRightAnimation');
@@ -118,7 +118,7 @@
             //tooltip
             $('[data-toggle="tooltip"]').tooltip();
 
-            if(isOnScreen('#about')) $('#about #profileImage').addClass('profileImageEnlarge') ;
+           // if(isOnScreen('#about')) $('#about #profileImage').addClass('profileImageEnlarge') ;
             if(isOnScreen('#about')) $('#about .section-name span').addClass('section-name-span');
             if(isOnScreen('#project')) $('#project .section-name span').addClass('section-name-span');
             if(isOnScreen('#education-container')) $('#education-container .section-name span').addClass('section-name-span');
@@ -141,7 +141,7 @@
         window.addEventListener('scroll', function(){
 
             isOnScreen('#profile') ? $('#scrollTopButton div').hide() :$('#scrollTopButton div').show();
-            if(isOnScreen('#about',100)) $('#about #profileImage').addClass('profileImageEnlarge') ;
+           // if(isOnScreen('#about',100)) $('#about #profileImage').addClass('profileImageEnlarge') ;
             if(isOnScreen('#about', 200)) $('#about .section-name span').addClass('section-name-span');
             if(isOnScreen('#project', 200)) $('#project .section-name span').addClass('section-name-span');
             if(isOnScreen('#education-container', 200)) $('#education-container .section-name span').addClass('section-name-span');
