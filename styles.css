@@ -455,6 +455,12 @@ about  .aboutQuote button:hover{
      background-color:#003152;
 }
 
+/* #project .scrollProject ul{
+    background-color: aqua!important;
+} */
+
+
+
 #project ul li{
     float: left;
     width: calc(100% / 3);
@@ -465,7 +471,6 @@ about  .aboutQuote button:hover{
 
 #project ul li h4{
     font-weight: bold;
-    color: #003152;
     text-align: left;
 
 }
@@ -474,13 +479,28 @@ about  .aboutQuote button:hover{
     width: 80%; height: 45vh;
     opacity: 1;
     z-index: 1;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 1.5em;
     background-color: whitesmoke;
     text-align: center;
 
    
 }
+
+#project ul li:nth-child(1) div{
+    background-color: crimson;
+    color: white;
+}
+#project ul li:nth-child(3) div{
+    background-color: royalblue;
+    color: white;
+}
+#project ul li:nth-child(2) div{
+    background-color: darkcyan;
+    color: white;
+}
+
+
 #project ul li div div p{
     text-align: left;
     justify-content: center;
@@ -492,10 +512,14 @@ about  .aboutQuote button:hover{
     
 }
 
+#project a{
+    color: aliceblue;
+}
+
 #project ul li div div{
     width: 100%; height: fit-content;
     opacity: 1;
-     color: black;
+    color: black;
     text-align: center;
     padding: 0.7em;
     z-index: 3;
