@@ -180,18 +180,7 @@ ul{
 
     #contact > div > div{
         width: 80%!important;
-    }
-
-   
-
-    
-    
-   
-
-   
-  
-
-    
+    }  
    
 }
 
@@ -333,15 +322,17 @@ ul{
     opacity: 1;
    
 }
-profile .arrowUp{
+#profile .arrowUp{
     width: 100%;
     bottom: 0;
-    height: fit-content;
+    background :transparent;
+    height: 10px;
     text-align: center;
     animation-name: arrowUpAnimation;
     animation-duration: 1s;
     animation-iteration-count: infinite;
-    vertical-align: middle;
+    
+    
 }
 @keyframes arrowUpAnimation{
    50% {bottom: 1%;}
