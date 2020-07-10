@@ -6,8 +6,8 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color:#edeeef!important;
-    color: #16161d!important;
+    background-color:#16161d!important;
+    color: white!important;
     font-family: 'Work Sans', sans-serif!important;
     
     
@@ -239,14 +239,14 @@ ul{
 
 #scrollTopButton div{
     position: fixed; bottom: 10px; right: 10px; line-height: 40px;
-    width: 40px; background-color:#16161d; z-index: 200;  text-align: center;
+    width: 40px; background-color:white; z-index: 200;  text-align: center;
     border-radius: 20%;
     opacity: .75;
 }
 
 #scrollTopButton div a i{
     vertical-align: middle;
-    color: white;
+    color: black;
 }
 
 
@@ -287,7 +287,7 @@ ul{
     font-family: 'Verdana, Geneva, Tahoma, sans-serif';
     text-align: left;
     width: 25vw;
-    height: fit-content;
+    height: 40px;
     color: #003152;
     font-weight:bolder ;
     
@@ -343,13 +343,13 @@ ul{
     text-align: center;
     margin-bottom: 10vh; 
     font-weight: bold;
-    color: whitesmoke;
+    color: white;
     font-family: 'IBM Plex Serif', serif!important;
 }
 .section-name span{
     padding-top: 0;
     display: inline-block; width: 0px; border-radius: 100px; height: 5px; 
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 
@@ -360,15 +360,14 @@ about .about-container{
     line-height: 2em;
     font-weight: 400;
     z-index: 25;
-    color: #16161d;
     height: fit-content;
 }
-#about .section-name{
+/* #about .section-name{
     color: #16161d;
-}
-#about .section-name span{
+} */
+/* #about .section-name span{
     background-color: #16161d;
-}
+} */
 
 about #aboutBox div:nth-child(1){
     
@@ -399,7 +398,7 @@ about  .aboutQuote{
 about  .aboutQuote p {
     text-align: left;
     font-family: 'Flamenco';
-    color: black;
+    
 }
 
 about  .aboutQuote button{
@@ -459,15 +458,21 @@ about  .aboutQuote button:hover{
      
 }
 
-#project .section-name{
+/* #project .section-name{
     color: whitesmoke;
 }
 #project .section-name span {
     background-color: whitesmoke;
-}
+} */
 #project > div{
-    width: 100%; height: 150vh;
-     background-color:#003152;
+    border-top-left-radius:50px;
+     border-top-right-radius:50px;
+    width: 100%;
+    height: 160vh;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px 0px 0px 0px;
+    padding-bottom: 5em!important;
 }
 
 /* #project .scrollProject ul{
@@ -496,13 +501,16 @@ about  .aboutQuote button:hover{
     z-index: 1;
     border-radius: 10px;
     padding: 1.5em;
-    background-color: whitesmoke;
     text-align: center;
     margin-top: 40px;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-width: 2px;
+    color: white;
 
    
 }
-
+/* 
 #project ul li:nth-child(1) div{
     background-color: dodgerblue;
     color: white;
@@ -520,7 +528,7 @@ about  .aboutQuote button:hover{
     color: white;
     
     
-}
+} */
 
 
 
@@ -542,7 +550,7 @@ about  .aboutQuote button:hover{
 #project ul li div div{
     width: 100%; height: fit-content;
     opacity: 1;
-    color: black;
+    color: white;
     text-align: center;
     padding: 0.7em;
     z-index: 3;
@@ -570,9 +578,11 @@ about  .aboutQuote button:hover{
 
 #education-container div{
     width: 100%;
-    height: 80vh;
-    background-color: #0e4d92;
+    height: 90vh;
     text-align: center;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px 0px 0px 0px;
 }
 
 #education-container div div{
@@ -599,7 +609,9 @@ about  .aboutQuote button:hover{
     width: 100%;
     height: 140vh;
     padding-left: 0;
-    background-color: #003152;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px 0px 0px 0px;
 }
 #likes-container div ul{
     list-style-type: none;
@@ -643,6 +655,7 @@ about  .aboutQuote button:hover{
     position: relative;
     padding-bottom: 2em;
     z-index: 1;
+    background-color: #edeeef;
 }
 
 #contact > div::before{
@@ -652,9 +665,12 @@ about  .aboutQuote button:hover{
     height: 125px;
     left: 0;
     top: -50px;
-    background-color: #edeeef;
     transform: skewY(10deg);
     z-index: -1;
+    /* border-style: solid;
+    border-color: white;
+    border-width: 2px 0px 0px 0px; */
+    background-color: #edeeef;
 }
 #contact > div::after{
     content: '';
@@ -663,9 +679,12 @@ about  .aboutQuote button:hover{
     height: 125px;
     right: 0;
     top: -50px;
-    background-color: #edeeef;
     transform: skewY(-10deg);
     z-index: -1;
+    background-color: #edeeef;
+    /* border-style: solid;
+    border-color: white;
+    border-width: 2px 0px 0px 0px; */
 }
 
 #contact .section-name{
@@ -683,16 +702,22 @@ about  .aboutQuote button:hover{
  text-align: center;
  background-color:  #16161d;
  border-radius: 10px;
+ border-style: solid;
+ border-color: white;
+ border-width: 2px 0px 2px 0px;
 }
 #contact form > div{
     width: 100%;
     border-radius: 50px;
     
 }
+#contact ::placeholder{
+    color: teal;
+}
 
 #contact form input, #contact form textarea{
     background-color: #16161d;
-    color: whitesmoke;
+    color: white;
     font-weight: lighter;
 }
 
@@ -731,9 +756,8 @@ about  .aboutQuote button:hover{
 
 #footer div{
     background-color: #16161d;
-    line-height: 15vh;
+    line-height: 10vh;
     text-align: center;
-    opacity: .9;
     
 }
 #footer div p {
