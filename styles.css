@@ -257,7 +257,7 @@ ul{
     padding: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('assets/dark.jpg');
+    background-image: url('assets/pxfuel3.com.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -492,6 +492,7 @@ about  .aboutQuote button:hover{
 #project ul li h4{
     font-weight: bold;
     text-align: left;
+    color: cadetblue;
 
 }
 
@@ -504,17 +505,20 @@ about  .aboutQuote button:hover{
     text-align: center;
     margin-top: 40px;
     border-style: solid;
-    border-color: whitesmoke;
-    border-width: 2px;
+    border-color: #3D444A;
+    border-width: 0px 1px 1px 0px;
     color: white;
+    box-shadow: inset 6px 8px 15px #3D444A;
 
    
 }
-/* 
-#project ul li:nth-child(1) div{
+ 
+/* #project ul li:nth-child(1) div{
     background-color: dodgerblue;
     color: white;
-}
+} */
+
+/*
 #project ul li:nth-child(2) div{
     background-color: crimson;
     color: white;
@@ -544,7 +548,7 @@ about  .aboutQuote button:hover{
 }
 
 #project a{
-    color: yellow;
+    color: slateblue;
 }
 
 #project ul li div div{
@@ -576,7 +580,7 @@ about  .aboutQuote button:hover{
 
 }
 
-#education-container div{
+#education-container > div{
     width: 100%;
     height: 90vh;
     text-align: center;
@@ -592,25 +596,30 @@ about  .aboutQuote button:hover{
     color: #3D444A;
     text-align: left;
     padding: 2em;
+    border-radius: 5px;
+    
+    
 }
 
 #education-container div div h3{
     font-weight: bolder;
     color: darkgreen;
     letter-spacing: .2em;
+    text-align: center;
 }
 
 #education-container div div p{
     font-weight: bolder;
     line-height: 1.8em;
+    ;
 }
 
-#likes-container div{
+#likes-container > div{
     width: 100%;
     height: 140vh;
     padding-left: 0;
     border-style: solid;
-    border-color: white;
+    border-color: whitesmoke;
     border-width: 2px 0px 0px 0px;
 }
 #likes-container div ul{
@@ -624,13 +633,14 @@ about  .aboutQuote button:hover{
     width: 30vw;
     height: 8vh;
     padding-top: 1vh;
-    background-color: #0e4d92;
+    background-color: #003152;
     position: absolute;
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
     color: #edeeef;
     padding-left: 2em;
     left: -100vw;
+
     
 }
 
