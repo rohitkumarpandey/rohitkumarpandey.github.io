@@ -257,10 +257,13 @@ ul{
     padding: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('assets/pxfuel3.com.jpg');
+    
+   background-image: linear-gradient(to top, #003152, lightskyblue);
+    /* background-image: url('assets/pxfuel3.com.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+
     opacity:1;
     z-index: -2;
     
@@ -280,7 +283,6 @@ ul{
     height: 130px;
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: aliceblue;
 }
 #profile #introductionQuote{
     font-size: 22px;
@@ -288,7 +290,7 @@ ul{
     text-align: left;
     width: 25vw;
     height: 40px;
-    color: #003152;
+    color: white;
     font-weight:bolder ;
     
 }
