@@ -1,0 +1,10 @@
+<role>Fullstack Developer.</role>
+<about>Hi I'm Rohit Pandey, but you can just call me Rohit.
+</br>
+<br>
+<p>
+A Software Engineer working in the information technology and services industry. </br>
+Skilled in Java, Spring, Hibernate, Angular 8. Completed BTech - Bachelor of Technology focused in Computer Science 
+from Kalinga Institute of Industrial Technology, Bhubaneswar.
+</p>
+</about>
