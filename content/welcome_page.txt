@@ -1,9 +1,0 @@
-<name>Hi I'm Rohit,</name>
-<designation>Software Engineer.</designation>
-<headline>
-<p>Multidisciplinary designer who hacks at, makes and occasionally breaks things.</p>
-<br>
-<p>
-Product Design Director on the team behind matrix.org.
-</p>
-Less moody in real life. ✌️</headline>
