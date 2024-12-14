@@ -1,0 +1,108 @@
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --header-height: 8vh;
+    --ipad-header-height: 6vh;
+    --section-height: calc(100vh - 2 * var(--header-height));
+    --footer-height: var(--header-height);
+    --whitish: #eeeeee;
+    --primary-color: #222831;
+    --secondary-color: #2d4059;
+    --orange: #ff5722;
+    --finder-input-height: 48px;
+}
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--whitish);
+}
+
+header {
+    height: var(--header-height);
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+}
+section {
+    padding-top: var(--header-height);
+    height: var(--section-height);
+    display: flex;
+    justify-content: center;
+}
+.vehicle-finder {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.finder-input {
+    height: var(--finder-input-height);
+    width: 90%;
+    border-radius: calc(0.5 * var(--finder-input-height));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+    background-color: white;
+}
+.finder-input > input {
+    border: none;
+    width: 70%;
+    height: 70%;
+}
+.finder-input .search-btn {
+    height: 50%;
+    cursor: pointer;
+}
+.finder-input .search-btn:hover {
+    scale: 1.1;
+}
+footer {
+    width: 100%;
+    height: var(--footer-height);
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .vehicle-finder {
+
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    /* header {
+        height: var(--ipad-header-height);
+        
+    }
+    section { 
+        height: calc(100vh - 2 * var(--ipad-header-height));
+    } */
+    .vehicle-finder {
+       width: 80%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .vehicle-finder {
+        width: 50%;
+    }
+}
