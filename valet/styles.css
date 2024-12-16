@@ -3,29 +3,27 @@ html {
 }
 
 :root {
-    --header-height: 8vh;
-    --ipad-header-height: 6vh;
+    --header-height: 100px;
     --section-height: calc(100vh - 2 * var(--header-height));
     --footer-height: var(--header-height);
-    --whitish: #eeeeee;
-    --primary-color: #222831;
+    --whitish: #eeee;
+    --primary-color: royalblue;
     --secondary-color: #2d4059;
     --orange: #ff5722;
-    --finder-input-height: 48px;
+    --finder-input-height: 100px;
 }
 
 body {
     margin: 0;
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: var(--whitish);
+    font-size: xx-large;
 }
 
 header {
     height: var(--header-height);
     width: 100%;
-    background-color: var(--secondary-color);
-    color: white;
     position: fixed;
     left: 0;
     top: 0;
@@ -34,6 +32,9 @@ header {
     align-items: center;
     font-size: 1.5rem;
     letter-spacing: 4px;
+    color: var(--secondary-color);
+    background-color: royalblue;
+    color: white;
 }
 
 section {
@@ -58,7 +59,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 1px 1px 5px var(--secondary-color);
+    box-shadow: 1px 1px 10px lightslategrey;
     background-color: white;
 }
 
@@ -78,60 +79,26 @@ section {
 }
 
 .vehicle-details-wrapper {
-    margin-top: 6vh;
-    min-height: 30vh;
+    margin-top: 80px;
     width: 90%;
     background-color: var(--whitish);
-    border-radius: 0 20px;
+    border-radius: 15px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 1px 1px 8px var(--primary-color);
+    box-shadow: 2px 4px 10px lightslategray;
+    background-color: white;
+    padding: 40px 20px;
 }
-
-.vehicle-details {
-    height: 90%;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.car-details {
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--secondary-color);
-    border-width: 0 1px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.car-details .vehicle-image {
-    height: 85%;
-    width: 85%;
-}
-.car-details .vehicle-image > img {
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-}
-
-.owner-details {
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 5%;
-}
-.owner-details .name {
-    font-size: medium;
+.vehicle-details-wrapper .name {
+    color: green;
     font-weight: bolder;
-} 
-
-.owner-details .contact {
-    margin-top: 40%;
 }
+.vehicle-details-wrapper > div:nth-child(1) > div:nth-child(3) {
+    margin-top: 20px;
+}
+.vehicle-details-wrapper > div:nth-child(1) {
+    width: 70%;
+}
+
 
 footer {
     width: 100%;
@@ -141,38 +108,35 @@ footer {
     align-items: center;
     justify-content: center;
     color: white;
+    background-color: royalblue;
 }
-
 
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .owner-details {
-font-size: x-small;
+    .vehicle-finder {
+        width: 100%;
     }
-    .car-details .vehicle-image {
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .vehicle-finder {
         width: 90%;
     }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
-    /* header {
-        height: var(--ipad-header-height);
-        
-    }
-    section { 
-        height: calc(100vh - 2 * var(--ipad-header-height));
-    } */
-    .vehicle-finder {
-        width: 80%;
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .vehicle-finder {
-        width: 50%;
-    }
-}
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    
+  } 
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    
+  }
