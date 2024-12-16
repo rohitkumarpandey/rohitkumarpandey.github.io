@@ -4,17 +4,21 @@
 <head>
     <title>Valet</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-
+   
 </head>
 
 <body>
     <header>Valet</header>
     <section>
         <div class="vehicle-finder">
+
+            <div id="ocrResult">Detected Text: </div>
+            <video id="video" autoplay muted></video>
+            <canvas id="canvas" style="display: none;"></canvas>
             <div class="finder-input">
+                <img src="./camera.png" class="search-btn" id="vehicle-search-btn">
                 <input type="text" placeholder="Enter Vehicle Number">
-                <img src="./search.png" class="search-btn" id="vehicle-search-btn">
+                <img src="./search copy.png" class="search-btn" id="vehicle-search-btn">
             </div>
             <div class="vehicle-details-wrapper">
                 <div>
@@ -27,6 +31,9 @@
         </div>
     </section>
     <footer>Made with &#9829; by Rohit</footer>
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
 </body>
 
 </html>
