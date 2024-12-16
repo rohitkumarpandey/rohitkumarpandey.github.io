@@ -3,15 +3,14 @@ html {
 }
 
 :root {
-    --header-height: 8vh;
-    --ipad-header-height: 6vh;
+    --header-height: 100px;
     --section-height: calc(100vh - 2 * var(--header-height));
     --footer-height: var(--header-height);
-    --whitish: #eeeeee;
+    --whitish: #eeee;
     --primary-color: #222831;
     --secondary-color: #2d4059;
     --orange: #ff5722;
-    --finder-input-height: 48px;
+    --finder-input-height: 100px;
 }
 
 body {
@@ -19,21 +18,22 @@ body {
     width: 100%;
     height: 100%;
     background-color: white;
+    font-size: xx-large;
+    color: #222831;
 }
 
 header {
     height: var(--header-height);
     width: 100%;
-    background-color: var(--secondary-color);
-    color: white;
     position: fixed;
     left: 0;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
     letter-spacing: 4px;
+    color: var(--secondary-color);
+    box-shadow: 0 2px 10px lightslategrey;
 }
 
 section {
@@ -58,8 +58,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 1px 1px 5px var(--secondary-color);
-    background-color: white;
+    box-shadow: 0 2px 10px lightslategrey;
 }
 
 .finder-input>input {
@@ -78,101 +77,64 @@ section {
 }
 
 .vehicle-details-wrapper {
-    margin-top: 6vh;
-    min-height: 30vh;
+    margin-top: 80px;
     width: 90%;
     background-color: var(--whitish);
-    border-radius: 0 20px;
+    border-radius: 15px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 1px 1px 8px var(--primary-color);
+    border: 1px solid lightslategrey;
+    box-shadow: 0 2px 6px lightslategrey;
+    background-color: white;
+    padding: 80px 40px;
 }
-
-.vehicle-details {
-    height: 90%;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.car-details {
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--secondary-color);
-    border-width: 0 1px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.car-details .vehicle-image {
-    height: 85%;
-    width: 85%;
-}
-.car-details .vehicle-image > img {
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-}
-
-.owner-details {
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 5%;
-}
-.owner-details .name {
-    font-size: medium;
+.vehicle-details-wrapper .name {
+    color: green;
     font-weight: bolder;
-} 
-
-.owner-details .contact {
-    margin-top: 40%;
+    font-size: larger;
 }
+.vehicle-details-wrapper > div:nth-child(1) > div:nth-child(3) {
+    margin-top: 20px;
+}
+.vehicle-details-wrapper > div:nth-child(1) {
+    width: 70%;
+}
+
 
 footer {
     width: 100%;
     height: var(--footer-height);
-    background-color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #222831;
 }
-
 
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .owner-details {
-font-size: x-small;
+    .vehicle-finder {
+        width: 100%;
     }
-    .car-details .vehicle-image {
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .vehicle-finder {
         width: 90%;
     }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
-    /* header {
-        height: var(--ipad-header-height);
-        
-    }
-    section { 
-        height: calc(100vh - 2 * var(--ipad-header-height));
-    } */
-    .vehicle-finder {
-        width: 80%;
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .vehicle-finder {
-        width: 50%;
-    }
-}
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    
+  } 
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    
+  }
