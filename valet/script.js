@@ -59,4 +59,4 @@ function processFrame() {
 }
 
 // Process frames at regular intervals
-setInterval(processFrame, 1000); // Adjust interval as needed (e.g., 500ms for faster updates)
+//setInterval(processFrame, 1000); // Adjust interval as needed (e.g., 500ms for faster updates)

@@ -1,42 +1,49 @@
 html {
     scroll-behavior: smooth;
 }
-video, canvas {
+
+video,
+canvas {
     border: 1px solid #ccc;
     margin: 20px 0;
     display: inline-block;
-    height: 200px;
+    height: 100px;
     width: 80%;
     object-fit: cover;
-    border-radius: 10px;
-  }
-  #ocrResult {
+    border-radius: 5px;
+}
+
+#ocrResult {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
-  }
+}
+
 :root {
-    --header-height: 8vh;
+    --background: #f5f1fe;
+    --header-height: 7vh;
     --section-height: calc(100vh - 2 * var(--header-height));
     --footer-height: var(--header-height);
     --first-color: #222831;
     --second-color: #393e46;
     --third-color: #f96d00;
     --forth-color: #f2f2f2;
-    --finder-input-height: 100px;
+    --finder-input-height: 5vh;
 }
 
 body {
     margin: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--second-color);
-    font-size: 48px;
-    color: white;
+    /* background-color: var(--second-color); */
+    color: var(--first-color);
+    background: var(--background);
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 header {
-    height: var(--header-height);
     width: 100%;
     position: fixed;
     left: 0;
@@ -44,53 +51,68 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 10px var(--primary-color);
-    color: white;
+    box-shadow: 1px 0px 6px var(--first-color);
     letter-spacing: 8px;
     font-weight: bolder;
+    font-size: 1.5rem;
+    min-height: var(--header-height);
     background-color: var(--first-color);
-    border-radius: 0 0 30px 30px;
+    color: var(--forth-color);
+    z-index: 10;
 }
 
 section {
-    padding-top: calc( 2 * var(--header-height));
+    padding-top: var(--header-height);
     height: var(--section-height);
     display: flex;
     justify-content: center;
+    overflow-y: auto;
 }
 
 .vehicle-finder {
-    margin-top: 14vh;
-    width: 100%;
+    width: 60%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-top: calc( var(--header-height) / 2);
 }
-
+.vehicle-finder-input-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background-color: var(--background);
+}
 .finder-input {
-    height: var(--finder-input-height);
-    width: 90%;
+    max-height: var(--finder-input-height);
+    width: 100%;
     border-radius: calc(0.5 * var(--finder-input-height));
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    box-shadow: 1px 2px 4px var(--forth-color);
-    background-color: white;
+    box-shadow: 0 1px 4px lightsteelblue;
+    padding: 2px 0;
+    background: white;
 }
 
 .finder-input>input {
     border: none;
     width: 70%;
     height: 70%;
-    font-size: 32px;
 }
+
 .finder-input>input:focus {
     outline: none;
 }
 
 .finder-input .search-btn:first-child {
     height: 80%;
-} 
+}
+
 .finder-input .search-btn:last-child {
     height: 50%;
     cursor: pointer;
@@ -101,64 +123,123 @@ section {
 }
 
 .vehicle-details-wrapper {
-    display: none !important;
     margin-top: 80px;
-    width: 90%;
+    width: 100%;
     background-color: var(--whitish);
-    border-radius: 15px;
+    border-radius: 5px;
     display: flex;
-    border: 1px solid lightslategrey;
-    box-shadow: 0 2px 6px lightslategrey;
-    padding: 80px 40px;
+    flex-wrap: wrap;
+    height: fit-content;
+    justify-content: center;
 }
-.vehicle-details-wrapper .name {
-    color: green;
-    font-weight: bolder;
-    font-size: larger;
-}
-.vehicle-details-wrapper > div:nth-child(1) > div:nth-child(3) {
-    margin-top: 20px;
-}
-.vehicle-details-wrapper > div:nth-child(1) {
-    width: 70%;
+
+.card {
+    width: 280px;
+    background-color: white;
+    height: 330px;
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 2px 15px var(--forth-color);
 }
 
 
+.owner-profile-banner {
+    border-radius: 20px 20px 0 0;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: url('https://loremflickr.com/200/200?random=4"');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.owner-profile-image {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 4px 20px lightslategrey;
+    bottom: 0;
+    transform: translate(0, 50%);
+    background: url('https://loremflickr.com/200/200?random=2"');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.owner-details {
+    margin-top: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.owner-details h3 {
+    margin-bottom: 0;
+}
+.owner-details .contact {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.owner-details .contact .cbtn {
+    background-color: var(--first-color);
+    color: var(--forth-color);
+    width: 35%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    cursor: pointer;
+}
+.owner-details .contact .cbtn:hover {
+    scale: 1.1;
+}
 footer {
     width: 100%;
     height: var(--footer-height);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #222831;
+    background-color: var(--second-color);
+    color: var(--forth-color);
 }
 
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /* .vehicle-finder {
+        width: 90%;
+    } */
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .vehicle-finder {
-        width: 100%;
-    }
-  }
-  
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 600px) {
-    
-  }
-  
-  /* Medium devices (landscape tablets, 768px and up) */
-  @media only screen and (min-width: 768px) {
-    .vehicle-finder {
         width: 90%;
     }
-  } 
-  
-  /* Large devices (laptops/desktops, 992px and up) */
-  @media only screen and (min-width: 992px) {
-    
-  } 
-  
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: 1200px) {
-    
-  }
+    .vehicle-details-wrapper{
+        align-items: center;
+        justify-content: center;
+    }
+}
