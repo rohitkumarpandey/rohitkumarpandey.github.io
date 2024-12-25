@@ -99,24 +99,42 @@ footer {
     text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-    .lv-introduction {
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    .lv-introduction, .lv-instructions {
         width: 95%;
     }
     .lv-introduction > h1 {
         font-size: 2rem;
     }
-    .lv-introduction > h2 {
+    .lv-introduction > h2, .lv-instructions > h2  {
         font-size: 1rem;
     }
-    .lv-introduction > p {
+    .lv-introduction > p, .lv-instructions > p {
         font-size: 0.8rem;
     }
     section > a {
         padding: 10px 15px;
         font-weight: normal;
     }
-    .lv-instructions {
+}
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    section:first-of-type {
+        height: 120vh;
+    }
+    .lv-introduction, .lv-instructions {
         width: 95%;
+    }
+    .lv-introduction > h1 {
+        font-size: 2rem;
+    }
+    .lv-introduction > h2, .lv-instructions > h2  {
+        font-size: 1rem;
+    }
+    .lv-introduction > p, .lv-instructions > p {
+        font-size: 0.8rem;
+    }
+    section > a {
+        padding: 10px 15px;
+        font-weight: normal;
     }
 }
