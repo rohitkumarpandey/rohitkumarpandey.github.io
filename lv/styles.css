@@ -24,7 +24,7 @@ body {
 
 header {
     background-color: var(--brand-color);
-    padding: 10px;
+    padding: 10px 0;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -38,7 +38,7 @@ header > img {
     height: 30px;
     margin-right: 5px;
 }
-section {
+section:first-of-type {
     background-color: var(--brand-color);
     height: 85vh;
     display: flex;
@@ -62,7 +62,7 @@ section {
 .lv-introduction > p {
     font-size: 1rem;
 }
-section > a {
+section:first-of-type > a {
     background-color: var(--brand-color);
     color: white;
     border: 1px solid white;
@@ -72,12 +72,31 @@ section > a {
     border-radius: 20px;
     margin-top: 20px;
 }
-section > a:hover {
+section:first-of-type > a:hover {
     background-color: white;
     color: var(--brand-color);
 }
+section:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 85vh;
+}
+.lv-instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--brand-color);
+    width: 70%;
+    text-align: center;
+}
 footer {
-    color: rebeccapurple;
+    padding: 10px 0;
+    background-color: var(--brand-color);
+    color: white;
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -96,5 +115,8 @@ footer {
     section > a {
         padding: 10px 15px;
         font-weight: normal;
+    }
+    .lv-instructions {
+        width: 95%;
     }
 }
