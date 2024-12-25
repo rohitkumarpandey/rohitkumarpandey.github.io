@@ -1,0 +1,81 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background: #f5f1fe;
+    --brand-color: #1D366F;
+    --second-color: #393e46;
+    --third-color: #f96d00;
+    --forth-color: #f2f2f2;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: var(--background);
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: var(--forth-color);
+}
+
+header {
+    background-color: var(--brand-color);
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+header > img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+section {
+    background-color: var(--brand-color);
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.lv-introduction {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.lv-introduction > h1 {
+    font-size: 3rem;
+    margin-top: 0;
+}
+.lv-introduction > h2 {
+    font-size: 2rem;
+}
+.lv-introduction > p {
+    font-size: 1rem;
+}
+footer {
+    color: rebeccapurple;
+}
+
+@media screen and (max-width: 768px) {
+    .lv-introduction {
+        width: 95%;
+    }
+    .lv-introduction > h1 {
+        font-size: 2rem;
+    }
+    .lv-introduction > h2 {
+        font-size: 1rem;
+    }
+    .lv-introduction > p {
+        font-size: 0.8rem;
+    }
+}
