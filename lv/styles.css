@@ -33,11 +33,12 @@ header {
     width: 100%;
 }
 
-header > img {
+header>img {
     width: 30px;
     height: 30px;
     margin-right: 5px;
 }
+
 section:first-of-type {
     background-color: var(--brand-color);
     height: 85vh;
@@ -46,23 +47,28 @@ section:first-of-type {
     align-items: center;
     justify-content: center;
 }
+
 .lv-introduction {
     width: 70%;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
-.lv-introduction > h1 {
+
+.lv-introduction>h1 {
     font-size: 3rem;
     margin-top: 0;
 }
-.lv-introduction > h2 {
+
+.lv-introduction>h2 {
     font-size: 2rem;
 }
-.lv-introduction > p {
+
+.lv-introduction>p {
     font-size: 1rem;
 }
-section:first-of-type > a {
+
+a {
     background-color: var(--brand-color);
     color: white;
     border: 1px solid white;
@@ -72,10 +78,12 @@ section:first-of-type > a {
     border-radius: 20px;
     margin-top: 20px;
 }
-section:first-of-type > a:hover {
+
+a:hover {
     background-color: white;
     color: var(--brand-color);
 }
+
 section:nth-of-type(2) {
     display: flex;
     flex-direction: column;
@@ -83,6 +91,7 @@ section:nth-of-type(2) {
     justify-content: flex-start;
     height: 85vh;
 }
+
 .lv-instructions {
     display: flex;
     flex-direction: column;
@@ -92,6 +101,76 @@ section:nth-of-type(2) {
     width: 70%;
     text-align: center;
 }
+
+section:nth-of-type(3) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 90vh;
+    background-color: var(--brand-color);
+}
+
+.lv-contact-us {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+}
+
+.lv-contact {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    height: 50vh;
+    color: var(--brand-color);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.lv-input-box {
+    width: 80%;
+    height: 80%;
+    background-color: var(--background);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.lv-input-box>textarea {
+    width: 90%;
+    height: 75%;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid var(--brand-color);
+    outline: none;
+    resize: none;
+}
+
+.lv-input-box>button {
+    background-color: var(--brand-color);
+    color: white;
+    border: none;
+    height: 40px;
+    padding: 10px 30px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: large;
+}
+
+.lv-input-box>button:hover {
+    background-color: white;
+    color: var(--brand-color);
+    border: 1px solid var(--brand-color);
+}
+
 footer {
     padding: 10px 0;
     background-color: var(--brand-color);
@@ -100,41 +179,84 @@ footer {
 }
 
 @media screen and (max-width: 768px) and (orientation: portrait) {
-    .lv-introduction, .lv-instructions {
+
+    .lv-introduction,
+    .lv-instructions,
+    .lv-contact-us {
         width: 95%;
     }
-    .lv-introduction > h1 {
+
+    .lv-introduction>h1 {
         font-size: 2rem;
     }
-    .lv-introduction > h2, .lv-instructions > h2  {
+
+    .lv-introduction>h2,
+    .lv-instructions>h2,
+    .lv-contact-us>h2 {
         font-size: 1rem;
     }
-    .lv-introduction > p, .lv-instructions > p {
+
+    .lv-introduction>p,
+    .lv-instructions>p,
+    .lv-contact-us>p {
         font-size: 0.8rem;
     }
-    section > a {
+
+    a {
         padding: 10px 15px;
         font-weight: normal;
     }
+
+    .lv-contact {
+        width: 90%;
+    }
 }
+
 @media screen and (max-width: 1024px) and (orientation: landscape) {
     section:first-of-type {
         height: 120vh;
     }
-    .lv-introduction, .lv-instructions {
+
+    section:nth-of-type(3) {
+        height: 150vh;
+    }
+
+    .lv-introduction,
+    .lv-instructions,
+    .lv-contact-us {
         width: 95%;
     }
-    .lv-introduction > h1 {
+
+    .lv-introduction>h1 {
         font-size: 2rem;
     }
-    .lv-introduction > h2, .lv-instructions > h2  {
+
+    .lv-introduction>h2,
+    .lv-instructions>h2,
+    .lv-contact-us>h2 {
         font-size: 1rem;
     }
-    .lv-introduction > p, .lv-instructions > p {
+
+    .lv-introduction>p,
+    .lv-instructions>p,
+    .lv-contact-us>p {
         font-size: 0.8rem;
     }
-    section > a {
+
+    a {
         padding: 10px 15px;
         font-weight: normal;
+    }
+    .lv-contact {
+        width: 90%;
+        height: 80vh;
+    }
+    .lv-input-box {
+        height: 80%;
+        width: 90%;
+    }
+    .lv-input-box>textarea {
+        width: 90%;
+        height: 70%;
     }
 }
