@@ -89,7 +89,7 @@ section:nth-of-type(2) {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 85vh;
+    height: 100vh;
 }
 
 .lv-instructions {
@@ -100,6 +100,47 @@ section:nth-of-type(2) {
     color: var(--brand-color);
     width: 70%;
     text-align: center;
+}
+
+.mySlides {
+    display: none;
+}
+
+.lv-corousel-container {
+    width: 70%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+.lv-corousel {
+    width: 98%;
+    height: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lv-corousel>button{
+    background-color: var(--brand-color);
+    color: white;
+    border: none;
+    height: 70px;
+    padding: 10px;
+    border-radius: 70px;
+    cursor: pointer;
+    font-size: large;
+    margin: 0 10px;
+}
+.lv-corousel>button:hover {
+    background-color: white;
+    color: var(--brand-color);
+    border: 1px solid var(--brand-color);
+}
+.lv-corousel>img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
 }
 
 section:nth-of-type(3) {
@@ -210,13 +251,33 @@ footer {
     .lv-contact {
         width: 90%;
     }
+    section:nth-of-type(2) {
+        height: 80vh;
+    }
+    .lv-corousel-container {
+        margin: 20px;
+        width: 98%;
+        height: 40%;
+    }
+    .lv-corousel {
+        width: 80%;
+        height: 100%;
+    }
+    .lv-corousel>button{
+        height: 50px;
+        padding: 5px;
+        border-radius: 50px;
+        font-size: medium;
+    }
 }
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
     section:first-of-type {
         height: 120vh;
     }
-
+    section:nth-last-of-type(2) {
+        height: 120vh;
+    }
     section:nth-of-type(3) {
         height: 150vh;
     }
@@ -247,14 +308,17 @@ footer {
         padding: 10px 15px;
         font-weight: normal;
     }
+
     .lv-contact {
         width: 90%;
         height: 80vh;
     }
+
     .lv-input-box {
         height: 80%;
         width: 90%;
     }
+
     .lv-input-box>textarea {
         width: 90%;
         height: 70%;

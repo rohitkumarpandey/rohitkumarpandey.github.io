@@ -33,7 +33,20 @@
                 of
                 your website on different devices with different orientation.</p>
         </div>
-        <div class="lv-corousel"></div>
+        <div class="lv-corousel-container">
+            <div class="lv-corousel">
+                <button onclick="plusDivs(-1)">&#10094;</button>
+
+                <img class="mySlides" src="assets/first.png">
+                <img class="mySlides" src="assets/second.png">
+                <img class="mySlides" src="assets/third.png">
+                <img class="mySlides" src="assets/fourth.png">
+                <img class="mySlides" src="assets/fifth.png">
+                <img class="mySlides" src="assets/sixth.png">
+              
+                <button onclick="plusDivs(1)">&#10095;</button>
+              </div>
+        </div>
     </section>
     <section>
         <div class="lv-contact-us">
@@ -41,12 +54,31 @@
             <p>Feel free to share your feedback with us.</b> We are always open to your suggestions and feedback.</p>
             <div class="lv-contact">
                 <div class="lv-input-box">
-                    <textarea id="feedback" placeholder="Enter your feedback"></textarea>
+                    <textarea id="feedback" placeholder="Your feedback here..."></textarea>
                     <button id="feedback-btn">Send</button>
                 </div>
             </div>
         </div>
     </section>
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+        </script>
 </body>
 
 </html>
