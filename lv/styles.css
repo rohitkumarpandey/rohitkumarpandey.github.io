@@ -15,7 +15,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     margin: 0;
-    background: var(--background);
+    background-color: white;
     font-family: "Montserrat", serif;
     font-optical-sizing: auto;
     font-style: normal;
