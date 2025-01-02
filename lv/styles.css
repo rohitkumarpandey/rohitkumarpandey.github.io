@@ -67,14 +67,15 @@ section:first-of-type {
 .lv-introduction>p {
     font-size: 1rem;
 }
-
-section > a {
+a {
+    text-decoration: none;
+}
+section:not(:nth-of-type(2)) > a {
     background-color: var(--brand-color);
     color: white;
     border: 1px solid white;
     font-weight: bold;
     padding: 16px 20px;
-    text-decoration: none;
     border-radius: 20px;
     margin-top: 20px;
 }
@@ -254,7 +255,7 @@ footer {
         font-size: 0.8rem;
     }
 
-    a {
+    section:not(:nth-last-of-type(2)) > a {
         padding: 10px 15px;
         font-weight: normal;
     }
