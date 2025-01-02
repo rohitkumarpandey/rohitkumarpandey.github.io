@@ -68,7 +68,7 @@ section:first-of-type {
     font-size: 1rem;
 }
 
-a {
+section > a {
     background-color: var(--brand-color);
     color: white;
     border: 1px solid white;
@@ -121,6 +121,8 @@ section:nth-of-type(2) {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .lv-corousel>button{
     background-color: var(--brand-color);

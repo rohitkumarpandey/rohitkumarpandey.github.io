@@ -1,11 +1,11 @@
 const steps = {
     'step-1': {
         title: 'Step 1: Add Layout Viewer Chrome extension',
-        description: 'Add the Layout Viewer Chrome extension to your browser by clicking on the <strong>Add to Chrome</strong> button.',
+        description: 'Add the <strong><a href="https://chromewebstore.google.com/detail/layout-viewer/bknccpbgecnfmnniccnibhimnbkdgbdk" target="_blank" >Layout Viewer</a></strong> Chrome extension to your browser by clicking on the <strong>Add to Chrome</strong> button.',
     },
     'step-2': {
         title: 'Step 2: Layout Viewer Added',
-        description: 'Refresh the page, the Layout Viewer extension has been added to your browser. You can now view layouts of your developing website.',
+        description: 'Refresh the page, the Layout Viewer extension has been added to your browser. You can now view layouts of your web page you are building.',
     },
     'step-3': {
         title: 'Step 3: Layout Viewer',
@@ -13,11 +13,11 @@ const steps = {
     },
     'step-4': {
         title: 'Step 4: View the Layout',
-        description: 'The Layout Viewer will display the layout of the website you are developing. It has a list of devices to view the layout in.',
+        description: 'The Layout Viewer will display the layout of the web page you are developing. It has a list of several devices to view the layout in.',
     },
     'step-5': {
         title: 'Step 5: Full Screen Layout Viewer',
-        description: 'To view the layout in full screen, click on the full screen button.',
+        description: 'To view the layout in full screen, click on the full screen button (top-left).',
     },
     'step-6': {
         title: 'Step 6: Add a new tab',
