@@ -2,4 +2,47 @@
     html {
         font-size: 40%;
     }
+    nav{
+        padding: 1.6rem;
+    }
+    nav ul li img {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+    .about-me-container,
+    .project-container {
+        grid-template-columns: repeat(1, 1fr);
+        width: 80%;
+        gap: 8rem;
+    }
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+        width: 80%;
+        gap: 3.2rem;
+    }
+    .blogs-container {
+      width: 80%;
+    }
+    .work-container {
+        width: 80%;
+    }
+    .work-container .line {
+        left: 0%;
+    }
+    .work-container .work-item > div:nth-child(1){
+        display: none;
+    }
+    .work-container .work-item .work-duration span {
+        display: none;
+    }
+    .work-container .work-item > div:nth-child(2) {
+        width: 100%;
+    }
+    p[class="company-name"] {
+        font-size: 3.2rem;
+    }
+    .sm-work-duration {
+        display: block;
+    }
+    
 }
