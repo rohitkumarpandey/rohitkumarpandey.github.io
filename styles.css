@@ -1,3 +1,13 @@
+:root {
+    --primary-color: #000;
+    --secondary-color: #1f1f1f;
+    --tertiary-color: #333333;
+    --text-color: #fff;
+    --secondary-text-color: #adadad;
+    --accent-color: #7FD376;
+    --blur-primary-color: rgba(0, 0, 0, 0.1);
+}
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -12,6 +22,11 @@ body {
     position: relative;
 }
 
+body>section {
+    width: 100%;
+    min-height: 100vh;
+}
+
 * {
     font-size: 1rem;
 }
@@ -21,42 +36,124 @@ h1 {
     font-weight: 600;
     margin: 0;
 }
+
 h2 {
     font-size: 3.2rem;
     font-weight: 600;
     margin: 0;
 }
+
 h3 {
     font-size: 2.4rem;
     font-weight: 600;
     margin: 0;
 }
+
 p {
     font-size: 1.6rem;
     font-weight: 400;
     margin: 0;
 }
 
+body[class="light-mode"] {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+body[class="dark-mode"] {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
 
 @keyframes scrollOccupation {
     0% {
-        transform: translateY(100%); /* Start below the visible area */
+        transform: translateY(100%);
+        /* Start below the visible area */
         opacity: 0;
     }
+
     10% {
-        transform: translateY(0); /* Move into the visible area */
+        transform: translateY(0);
+        /* Move into the visible area */
         opacity: 1;
     }
+
     30% {
-        transform: translateY(0); /* Stay in the visible area */
+        transform: translateY(0);
+        /* Stay in the visible area */
         opacity: 1;
     }
+
     40% {
-        transform: translateY(-100%); /* Move out of the visible area */
+        transform: translateY(-100%);
+        /* Move out of the visible area */
         opacity: 0;
     }
+
     100% {
-        transform: translateY(-100%); /* Stay out of the visible area */
+        transform: translateY(-100%);
+        /* Stay out of the visible area */
         opacity: 0;
     }
+}
+
+.attractive-btn {
+    padding: 1.6rem 4.8rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--text-color);
+    background-color: var(--tertiary-color);
+    border: none;
+    border-radius: 5rem 1.6rem 5rem 5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.sm-btn {
+    padding: 1.2rem 3.2rem;
+    font-size: 1.4rem;
+}
+.lg-btn {
+    padding: 2rem 6.4rem;
+    font-size: 1.8rem;
+    border-radius: 6rem 2rem 6rem 6rem;
+}
+.highlight-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.sm-pills {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--tertiary-color);
+    color: var(--secondary-text-color);
+    padding: 0.4rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lg-pills {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--tertiary-color);
+    padding: 0.8rem 2.4rem;
+    font-size: 1.6rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
