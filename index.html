@@ -37,9 +37,9 @@
     <section id="home" class="intro">
         <h1 class="name">I'm Rohit.</h1>
         <section class="occupation">
-            <h2>Digital Creator.</h2>
-            <h2>Software Developer.</h2>
-            <h2>Technical Blogger.</h2>
+            <h2>Digital Creator</h2>
+            <h2>Software Developer</h2>
+            <h2>Technical Blogger</h2>
         </section>
         <p class="one-liner">With minimalistic desire to create.
         </p>
@@ -53,7 +53,7 @@
             What I Like To Do.
         </div>
         <h1>Introduction.</h1>
-        <h2>About me.</h2>
+        <h2>About me</h2>
         <div class="about-me-container">
             <div>
                 <div class="about-me-icon">
@@ -186,44 +186,8 @@
             What I Know.
         </div>
         <h1>Learning So Far.</h1>
-        <h2>Skill Set.</h2>
-        <div class="skills-container">
-            <div class="skill">
-                <img src="./assets/js.svg" alt="JavaScript">
-                <h3>JavaScript</h3>
-            </div>
-            <div class="skill">
-                <img src="./assets/react.svg" alt="React.js">
-                <h3>React.js</h3>
-            </div>
-            <div class="skill">
-                <img src="./assets/nodejs.svg" alt="Node.js">
-                <h3>Node.js</h3>
-            </div>
-            <div class="skill">
-                <img src="./assets/html.svg" alt="HTML">
-                <h3>HTML</h3>
-            </div>
-            <div class="skill">
-                <img src="./assets/css3.svg" alt="CSS3">
-                <h3>CSS3</h3>
-            </div>
-            <div class="skill">
-                <img src="./assets/angular.svg" alt="CSS3">
-                <h3>Angular</h3>
-            </div>
-            <div class="skill">
-                <img src="./assets/java.svg" alt="CSS3">
-                <h3>Java</h3>
-            </div>
-            <div class="skill">
-                <img src="./assets/spring-boot.svg" alt="CSS3">
-                <h3>Spring Boot</h3>
-            </div>
-            <div class="skill">
-                <img src="./assets/ts.svg" alt="CSS3">
-                <h3>Typescript</h3>
-            </div>
+        <h2>Skill Set</h2>
+        <div id="skills-container" class="skills-container">
 
         </div>
         <div class="stats-container">
@@ -252,9 +216,9 @@
             What I Write.
         </div>
         <h1>Written So Far.</h1>
-        <h2>Blogs Collection.</h2>
+        <h2>Blogs Collection</h2>
         <div id="blogs-container" class="blogs-container">
-
+            <img src="./assets/loader.svg" alt="Loading Blogs" class="loader">
         </div>
     </section>
     <section id="work" class="work">
@@ -262,10 +226,10 @@
             Where I Have Worked So Far.
         </div>
         <h1>Worked So Far.</h1>
-        <h2>Industry Experience.</h2>
+        <h2>Industry Experience</h2>
         <div class="work-container">
             <div class="line"></div>
-            <div class="work-item">
+            <div id="infosys" class="work-item">
                 <div class="work-duration">Sep 2019<span>to</span>&nbsp;Nov 2021&nbsp;<span>(2 yrs 3 mos)</span></div>
                 <div class="work-details">
                     <div class="sm-work-duration">Sep 2019&nbsp;<span>to</span>&nbsp;Nov 2021&nbsp;<span>(2 yrs 3
@@ -299,7 +263,7 @@
                     </p>
                 </div>
             </div>
-            <div class="work-item">
+            <div id="epam" class="work-item">
                 <div class="work-duration">Nov 2021<span>to</span>&nbsp;Jun 2023&nbsp;<span>(1 yr 8 mos)</span></div>
                 <div class="work-details">
                     <div class="sm-work-duration">Nov 2021&nbsp;<span>to</span>&nbsp;Jun 2023&nbsp;<span>(1 yr 8
@@ -333,7 +297,7 @@
                     </p>
                 </div>
             </div>
-            <div class="work-item">
+            <div id="air-india" class="work-item">
                 <div class="work-duration">Jul 2023<span>to</span>&nbsp;Present&nbsp;<span>(2 yrs)</span></div>
                 <div class="work-details">
                     <div class="sm-work-duration">Jul 2023&nbsp;<span>to</span>&nbsp;Present&nbsp;<span>(2 yrs)</span>
@@ -373,23 +337,26 @@
             Where I Will Meet.
         </div>
         <h1>Places I Mostly Visits.</h1>
-        <h2>Communication Channels.</h2>
+        <h2>Communication Channels</h2>
         <div class="contact-container">
-            <form method="POST" class="contact-form">
+            <form class="contact-form">
                 <div class="contact-item">
-                    <label for="subject">Subject:</label>
-                    <input type="text" id="subject" name="subject" required>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required placeholder="Purpose of your message...">
+                    <span id="title-error" class="error-text"></span>
                 </div>
                 <div class="contact-item">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                        placeholder="Type your message here..."></textarea>
+                    <span id="message-error" class="error-text"></span>
                 </div>
-                <button type="submit" class="attractive-btn highlight-btn">Send Message</button>
+                <button id="send-email-btn" class="attractive-btn highlight-btn">Send Message</button>
             </form>
         </div>
     </section>
     <footer>
-        
+
     </footer>
 </body>
 

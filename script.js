@@ -1,5 +1,27 @@
 const mediumUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@pandey-rohit";
 const leetcodeUrl = "https://leetcode-stats-api.herokuapp.com/rohitpandey96";
+const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize); // Root font size in pixels
+
+const navigationLinks = document.querySelectorAll("nav a img");
+const emailSubject = document.getElementById("title");
+const emailBody = document.getElementById("message");
+const emailButton = document.getElementById("send-email-btn");
+
+const emailSubjectError = document.getElementById("title-error");
+const emailBodyError = document.getElementById("message-error");
+
+const skills = [
+    { name: 'JavaScript', icon: './assets/js.svg' },
+    { name: 'React.js', icon: './assets/react.svg' },
+    { name: 'Node.js', icon: './assets/nodejs.svg' },
+    { name: 'HTML', icon: './assets/html.svg' },
+    { name: 'CSS3', icon: './assets/css3.svg' },
+    { name: 'Angular', icon: './assets/angular.svg' },
+    { name: 'Java', icon: './assets/java.svg' },
+    { name: 'Spring Boot', icon: './assets/spring-boot.svg' },
+    { name: 'Typescript', icon: './assets/ts.svg' },
+    { name: 'AWS', icon: './assets/aws.svg' },
+]
 
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -103,7 +125,6 @@ function createBlogElement(blog) {
 }
 function renderBlogs() {
     const blogContainer = document.getElementById("blogs-container");
-    blogContainer.innerHTML = "<p>Loading blogs...</p>";
     loadBlogs().then(blogs => {
         if (blogs.length === 0) {
             blogContainer.innerHTML = "<p>No blog available :(</p>";
@@ -114,9 +135,26 @@ function renderBlogs() {
         blogContainer.innerHTML = "";
 
         // Render each blog
-        blogs.forEach(blog => {
-            blogContainer.appendChild(createBlogElement(blog));
+        blogs.forEach((blog, index) => {
+            setTimeout(() => {
+                blogContainer.appendChild(createBlogElement(blog));
+                blogContainer.lastChild.classList.add("slow-fade-in");
+            }, 200 * index);
         });
+    });
+}
+function renderSkills() {
+    const skillsContainer = document.getElementById("skills-container");
+    skills.forEach((skill, index) => {
+        const skillElement = document.createElement("div");
+        skillElement.classList.add("skill");
+        skillElement.innerHTML = `
+            <img src="${skill.icon}" alt="${skill.name}" />
+            <h3>${skill.name}</h3>`;
+        setTimeout(() => {
+            skillsContainer.appendChild(skillElement);
+            skillElement.classList.add("fade-in");
+        }, index * 200);
     });
 }
 
@@ -140,13 +178,7 @@ function sectionInViewCallback(entry, observer) {
         if (activeLink) {
             const image = activeLink.querySelector("img");
             if (image) {
-                const navigationLinks = document.querySelectorAll("nav a");
-                navigationLinks.forEach(link => {
-                    const image = link.querySelector("img");
-                    if (image) {
-                        image.classList.remove("active");
-                    }
-                });
+                navigationLinks.forEach(img => img.classList.remove("active"));
                 image.classList.add("active");
             }
         }
@@ -154,28 +186,84 @@ function sectionInViewCallback(entry, observer) {
         if (entry.target.id === "blogs") {
             const blogContainer = document.getElementById("blogs-container");
             if (blogContainer && !blogContainer.classList.contains("viewed")) {
-                    renderBlogs();
+                renderBlogs();
                 blogContainer.classList.add("viewed");
+            }
+        }
+        if (entry.target.id === "skills") {
+            const skillsContainer = document.getElementById("skills-container");
+            if (skillsContainer && !skillsContainer.classList.contains("viewed")) {
+                renderSkills();
+                skillsContainer.classList.add("viewed");
             }
         }
 
     }
 }
-function sectionInView() {
+function workSectionInViewCallback(entry, observer) {
+    if (entry.isIntersecting) {
+        if (entry.target.id === "infosys") {
+            const epam = document.getElementById("epam");
+            if (epam && !epam.classList.contains("viewed")) {
+                epam.classList.add("viewed");
+                epam.classList.add("fade-in");
+                epam.style.display = "flex";
+            }
+        }
+        if (entry.target.id === "epam") {
+            const airIndia = document.getElementById("air-india");
+            if (airIndia && !airIndia.classList.contains("viewed")) {
+                airIndia.classList.add("viewed");
+                airIndia.classList.add("slow-fade-in");
+                airIndia.style.display = "flex";
+            }
+        }
+
+    }
+}
+function sectionInView(threshold = 0.4) {
     const sections = document.querySelectorAll("body > section");
 
     const observerOptions = {
         root: null,
-        rootMargin: "0px",
-        threshold: 0.3
+        rootMargin: `${-28 * rootFontSize}px 0px 0px 0px`,
+        threshold
     };
     observeIntersection(sections, sectionInViewCallback, observerOptions);
 }
-document.addEventListener("DOMContentLoaded", function () {
-    //renderBlogs();
-    loadLeetCodeStats().then(stats => {
+function workSectionInView(threshold = 1) {
+    const workSections = document.querySelectorAll(".work-item");
+    const observerOptions = {
+        root: null,
+        rootMargin: `${-28 * rootFontSize}px 0px 0px 0px`,
+        threshold
+    };
+    observeIntersection(workSections, workSectionInViewCallback, observerOptions);
+}
+function sendEmail() {
+    if (!emailSubject || !emailBody || !emailButton) {
+        console.error("Email elements are missing.");
+        return;
     }
-    );
-    sectionInView();
 
+    emailButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        const subject = encodeURIComponent(emailSubject.value.trim());
+        const body = encodeURIComponent(emailBody.value.trim());
+
+        if (!subject || !body) {
+            emailSubjectError.textContent = !subject ? "Please fill the purpose of the message." : "";
+            emailBodyError.textContent = !body ? "Please fill the message." : "";
+            return;
+        }
+
+        const mailtoLink = `mailto:rohitpandey1896@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+    });
+}
+document.addEventListener("DOMContentLoaded", async function () {
+    const stats = await loadLeetCodeStats();
+    sectionInView();
+    workSectionInView();
+    sendEmail();
 });

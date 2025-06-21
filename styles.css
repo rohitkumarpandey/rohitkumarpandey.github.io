@@ -24,16 +24,22 @@ body {
 
 body>section {
     width: 100%;
+    min-height: 80vh;
+}
+
+body>section:nth-child(1) {
     min-height: 100vh;
 }
 
 * {
     font-size: 1rem;
 }
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
 h1 {
     font-size: 4.8rem;
     font-weight: 600;
@@ -123,15 +129,18 @@ li {
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
+
 .sm-btn {
     padding: 1.2rem 3.2rem;
     font-size: 1.4rem;
 }
+
 .lg-btn {
     padding: 2rem 6.4rem;
     font-size: 1.8rem;
     border-radius: 6rem 2rem 6rem 6rem;
 }
+
 .highlight-btn {
     background-color: var(--accent-color);
     color: var(--primary-color);
@@ -161,4 +170,29 @@ li {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+.slow-fade-in {
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.error-text {
+    color: red;
+    font-size: 1.4rem;
+    font-weight: 500;
 }
