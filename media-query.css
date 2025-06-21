@@ -44,5 +44,8 @@
     .sm-work-duration {
         display: block;
     }
+    .contact-container {
+        width: 80%;
+    }
     
 }

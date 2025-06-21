@@ -260,6 +260,32 @@ section.contact {
     align-content: baseline;
     justify-items: center;
 }
+.stats-container {
+    display: none;
+    width: 60%;
+    margin-top: 4.8rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.4rem;
+}
+.stat-item {
+    justify-content: center;
+    width: 100%;
+    height: 24rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 10px var(--tertiary-color);
+}
+.stat-item > span {
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    gap: 0.8rem;
+}
+.stat-item > span > img {
+    width: 2.4rem;
+    height: 2.4rem;
+}
 
 .skills-container .skill {
     display: flex;
@@ -283,13 +309,20 @@ section.contact {
     width: 60%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.blogs-container p {
+    color: var(--accent-color);
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin: 2.4rem 0;
 }
 
 .blogs-container .blog {
     display: flex;
     width: 100%;
     height: 8rem;
-    padding: 0 1.6rem;
     box-shadow: 1px 1px 10px var(--tertiary-color);
     margin-bottom: 1.6rem;
 }
@@ -299,6 +332,7 @@ section.contact {
 }
 .blogs-container > .blog > div {
     display: flex;
+    padding: 0 1.6rem;
 }
 .blogs-container .blog > div:nth-child(1) {
     flex-direction: column;
@@ -414,4 +448,62 @@ p[class="company-name"] {
     font-weight: 500;
     color: var(--text-color);
     letter-spacing: -0.2rem;
+}
+
+.contact-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contact-container > form {
+    width: 100%;
+    margin: 1.6rem 0;
+}
+.contact-item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2.4rem 0;
+}
+.contact-item > label {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    margin-bottom: 0.8rem;
+}
+.contact-item > input, .contact-item > textarea {
+    width: 100%;
+    margin: 0;
+    padding: 0.8rem;
+    border: none;
+    background-color:transparent;
+    margin: 0.8rem 0;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    box-shadow: 0px 0px 30px var(--tertiary-color);
+    border-radius: 1rem;
+}
+.contact-item > input {
+    height: 4rem;
+}
+.contact-item > textarea {
+    height: 24rem;
+    resize: none;
+}
+.contact-item > input:focus, .contact-item > textarea:focus {
+    border: 2px solid var(--accent-color);
+    outline: none;
+    transition: border 0.3s ease-in;
+}
+
+button[type="submit"] {
+    cursor: pointer;
+    width: fit-content;
+}
+
+footer {
+    height: 10rem;
 }
