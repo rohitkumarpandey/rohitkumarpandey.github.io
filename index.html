@@ -160,7 +160,7 @@
                     <div class="tech-tags">
                         <button class="sm-pills">
                             <img src="./assets/chrome.svg">
-                            Google Chrome Extension</button>
+                            Chrome Extension</button>
                         <button class="sm-pills">
                             <img src="./assets/js.svg">
                             JavaScript</button>
@@ -226,6 +226,26 @@
             </div>
 
         </div>
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="sm-pills">
+                    <img src="./assets/leetcode.png" alt="LeetCode">
+                    LeetCode
+                </span>
+            </div>
+            <div class="stat-item">
+                <span class="sm-pills">
+                    <img src="./assets/medium.svg" alt="LeetCode">
+                    Medium
+                </span>
+            </div>
+            <div class="stat-item">
+                <span>
+                    <img src="./assets/leetcode.png" alt="LeetCode">
+                    LeetCode
+                </span>
+            </div>
+        </div>
     </section>
     <section id="blogs" class="blogs">
         <div class="section-title">
@@ -233,73 +253,8 @@
         </div>
         <h1>Written So Far.</h1>
         <h2>Blogs Collection.</h2>
-        <div class="blogs-container">
-            <div class="blog">
-                <div>
-                    <span>How I Optimized API Response Time from 3 Minutes to 3 Seconds</span>
-                    <span>
-                        21st October 2023
-                    </span>
-                </div>
-                <div>
-                    <a href="#" class="sm-pills">Read More</a>
-                </div>
-            </div>
-            <div class="blog">
-                <div>
-                    <span>How I Optimized API Response Time from 3 Minutes to 3 Seconds</span>
-                    <span>
-                        21st October 2023
-                    </span>
-                </div>
-                <div>
-                    <a href="#" class="sm-pills">Read More</a>
-                </div>
-            </div>
-            <div class="blog">
-                <div>
-                    <span>How I Optimized API Response Time from 3 Minutes to 3 Seconds</span>
-                    <span>
-                        21st October 2023
-                    </span>
-                </div>
-                <div>
-                    <a href="#" class="sm-pills">Read More</a>
-                </div>
-            </div>
-            <div class="blog">
-                <div>
-                    <span>How I Optimized API Response Time from 3 Minutes to 3 Seconds</span>
-                    <span>
-                        21st October 2023
-                    </span>
-                </div>
-                <div>
-                    <a href="#" class="sm-pills">Read More</a>
-                </div>
-            </div>
-            <div class="blog">
-                <div>
-                    <span>How I Optimized API Response Time from 3 Minutes to 3 Seconds</span>
-                    <span>
-                        21st October 2023
-                    </span>
-                </div>
-                <div>
-                    <a href="#" class="sm-pills">Read More</a>
-                </div>
-            </div>
-            <div class="blog">
-                <div>
-                    <span>How I Optimized API Response Time from 3 Minutes to 3 Seconds</span>
-                    <span>
-                        21st October 2023
-                    </span>
-                </div>
-                <div>
-                    <a href="#" class="sm-pills">Read More</a>
-                </div>
-            </div>
+        <div id="blogs-container" class="blogs-container">
+
         </div>
     </section>
     <section id="work" class="work">
@@ -313,7 +268,8 @@
             <div class="work-item">
                 <div class="work-duration">Sep 2019<span>to</span>&nbsp;Nov 2021&nbsp;<span>(2 yrs 3 mos)</span></div>
                 <div class="work-details">
-                    <div class="sm-work-duration">Sep 2019&nbsp;<span>to</span>&nbsp;Nov 2021&nbsp;<span>(2 yrs 3 mos)</span>
+                    <div class="sm-work-duration">Sep 2019&nbsp;<span>to</span>&nbsp;Nov 2021&nbsp;<span>(2 yrs 3
+                            mos)</span>
                     </div>
                     <p class="company-name">Infosys Limited</p>
                     <span>Senior Systems Engineer</span>
@@ -346,7 +302,8 @@
             <div class="work-item">
                 <div class="work-duration">Nov 2021<span>to</span>&nbsp;Jun 2023&nbsp;<span>(1 yr 8 mos)</span></div>
                 <div class="work-details">
-                    <div class="sm-work-duration">Nov 2021&nbsp;<span>to</span>&nbsp;Jun 2023&nbsp;<span>(1 yr 8 mos)</span>
+                    <div class="sm-work-duration">Nov 2021&nbsp;<span>to</span>&nbsp;Jun 2023&nbsp;<span>(1 yr 8
+                            mos)</span>
                     </div>
                     <p class="company-name">EPAM Systems Limited</p>
                     <span>Senior Software Developer</span>
@@ -418,8 +375,22 @@
         <h1>Places I Mostly Visits.</h1>
         <h2>Communication Channels.</h2>
         <div class="contact-container">
+            <form method="POST" class="contact-form">
+                <div class="contact-item">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="contact-item">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="attractive-btn highlight-btn">Send Message</button>
+            </form>
         </div>
     </section>
+    <footer>
+        
+    </footer>
 </body>
 
 </html>
