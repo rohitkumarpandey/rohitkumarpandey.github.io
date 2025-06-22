@@ -74,6 +74,13 @@ const statsView = {
     }
 }
 let blogs = [];
+
+const logos = {
+    medium: "./assets/medium.svg",
+    leetCode: "./assets/leetcode.svg",
+    github: "./assets/github.svg",
+    linkedIn: "./assets/linkedin.svg",
+}
 function formatDate(dateString) {
     const date = new Date(dateString);
 
@@ -114,13 +121,14 @@ async function callAPI(url) {
 async function loadBlogs() {
     try {
         const data = await callAPI(mediumUrl);
-        const blogs = []; // Initialize blogs as an empty array
+        const blogs = [];
         if (data && data.items) {
             data.items.forEach(item => {
                 blogs.push({
                     title: item.title,
                     pubDate: formatDate(item.pubDate),
-                    link: item.link
+                    link: item.link,
+                    platform: "medium"
                 });
             });
         }
@@ -167,7 +175,7 @@ function createBlogElement(blog) {
     blogElement.innerHTML = `
         <div>
             <span>${blog.title}</span>
-            <span>${blog.pubDate}</span>
+            <span>${blog.pubDate} <button class="sm-pills"><img src=${logos[blog.platform]}>${blog.platform}</button></span>
         </div>
         <div>
             <a href="${blog.link}" target="_blank" class="sm-pills">Read More</a>

@@ -165,7 +165,7 @@ section.contact {
 .about-me-icon img {
     width: 4rem;
     height: 4rem;
-    filter: invert(50%);
+    filter: invert(60%);
 }
 
 .about-me-title,
@@ -234,10 +234,10 @@ section.contact {
 }
 
 .project-footer {
-    margin: 4rem 0;
+    margin: 2.4rem 0 0 0;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 6.4rem;
 }
 
 .project-btns {
@@ -254,7 +254,9 @@ section.contact {
     width: 60%;
     align-content: baseline;
     justify-items: center;
+    min-height: 20vh;
 }
+
 .skills-container .skill {
     display: flex;
     align-items: center;
@@ -275,6 +277,7 @@ section.contact {
     height: 3.2rem;
     margin-right: 1rem;
 }
+
 .stats-container {
     display: grid;
     width: 60%;
@@ -316,6 +319,7 @@ section.contact {
     height: 3.2rem;
     filter: invert(100%);
 }
+
 .stats-container:has(.stat-item) {
     position: relative;
     box-shadow: 0px 0px 10px 2px var(--tertiary-color),
@@ -373,7 +377,29 @@ section.contact {
 .blogs-container .blog span:nth-child(1) {
     font-size: 1.4rem;
     font-weight: 500;
+    color: var(--text-color);
+}
+
+.blogs-container .blog span:nth-child(2) {
     color: var(--secondary-text-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.blogs-container .blog span:nth-child(2)>button>img {
+    width: 1.6rem;
+    height: 1.6rem;
+    filter: invert(80%);
+}
+
+.blogs-container .blog span:nth-child(2)>button {
+    display: flex;
+    padding: 0 0.4rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    text-transform: capitalize;
 }
 
 .blogs-container .blog:hover span:nth-child(1) {
@@ -497,6 +523,38 @@ p[class="company-name"] {
     flex-direction: column;
     justify-content: center;
 }
+.contact-container > span {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    margin: 7.2rem 0 0 0;
+    text-align: center;
+}
+.contact-container > span .highlight-text {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+.communication-channels-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 1.6rem;
+}
+.communication-channels-container .contact-icon {
+    width: 6.4rem;
+    height: 6.4rem;
+}
+.communication-channels-container .contact-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+.communication-channels-container > a:not(:first-child) > .contact-icon {
+    filter: invert(100%);
+}
 
 .contact-container>form {
     width: 100%;
@@ -555,4 +613,8 @@ button[type="submit"] {
 
 footer {
     height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
