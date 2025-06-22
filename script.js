@@ -1,5 +1,6 @@
 const mediumUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@pandey-rohit";
 const leetcodeUrl = "https://leetcode-stats-api.herokuapp.com/rohitpandey96";
+const githubUrl = "https://api.github.com/users/rohitkumarpandey";
 const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize); // Root font size in pixels
 
 const navigationLinks = document.querySelectorAll("nav a img");
@@ -9,6 +10,7 @@ const emailButton = document.getElementById("send-email-btn");
 
 const emailSubjectError = document.getElementById("title-error");
 const emailBodyError = document.getElementById("message-error");
+const statsContainer = document.getElementById("stats-container");
 
 const skills = [
     { name: 'JavaScript', icon: './assets/js.svg' },
@@ -21,8 +23,57 @@ const skills = [
     { name: 'Spring Boot', icon: './assets/spring-boot.svg' },
     { name: 'Typescript', icon: './assets/ts.svg' },
     { name: 'AWS', icon: './assets/aws.svg' },
-]
+];
 
+const stats = {
+    medium: {
+        totalBlogs: 0
+    },
+    leetCode: {
+        totalSolved: 0,
+        totalQuestions: 0,
+        easySolved: 0,
+        totalEasy: 0,
+        mediumSolved: 0,
+        totalMedium: 0,
+        hardSolved: 0,
+        totalHard: 0,
+        acceptanceRate: 0,
+        ranking: 0
+    },
+    github: {
+        totalRepos: 0,
+        totalFollowers: 0
+    }
+};
+
+const statsView = {
+    leetCode: {
+        stats: stats.leetCode,
+        name: "LeetCode",
+        icon: "./assets/leetcode.svg",
+        get text() {
+            return `Easy: <b>${stats.leetCode.easySolved}</b>/${stats.leetCode.totalEasy}, Medium: <b>${stats.leetCode.mediumSolved}</b>/${stats.leetCode.totalMedium}, Hard: <b>${stats.leetCode.hardSolved}</b>/${stats.leetCode.totalHard}, Acceptance Rate: <b>${stats.leetCode.acceptanceRate}</b>%, Ranking: <b>${stats.leetCode.ranking}</b>`;
+        },
+    },
+    github: {
+        stats: stats.github,
+        name: "GitHub",
+        icon: "./assets/github.svg",
+        get text() {
+            return `Repos: <b>${stats.github.totalRepos}</b>, Followers: <b>${stats.github.totalFollowers}</b>`;
+        }
+    },
+    medium: {
+        stats: stats.medium,
+        name: "Medium",
+        icon: "./assets/medium.svg",
+        get text() {
+            return `<b>${stats.medium.totalBlogs}</b> blogs`
+        }
+    }
+}
+let blogs = [];
 function formatDate(dateString) {
     const date = new Date(dateString);
 
@@ -49,7 +100,7 @@ function formatDate(dateString) {
     return `${day}${ordinalSuffix(day)} ${month} ${year}`;
 }
 
-function callAPI(url) {
+async function callAPI(url) {
     return fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -123,24 +174,20 @@ function createBlogElement(blog) {
         </div>`;
     return blogElement;
 }
-function renderBlogs() {
+async function renderBlogs() {
     const blogContainer = document.getElementById("blogs-container");
-    loadBlogs().then(blogs => {
-        if (blogs.length === 0) {
-            blogContainer.innerHTML = "<p>No blog available :(</p>";
-            return;
-        }
+    const blgs = blogs.length == 0 ? await loadBlogs() : blogs;
+    if (blgs.length === 0) {
+        blogContainer.innerHTML = "<p>No blog available :(</p>";
+        return;
+    }
+    blogContainer.innerHTML = "";
 
-        // Clear the loading message
-        blogContainer.innerHTML = "";
-
-        // Render each blog
-        blogs.forEach((blog, index) => {
-            setTimeout(() => {
-                blogContainer.appendChild(createBlogElement(blog));
-                blogContainer.lastChild.classList.add("slow-fade-in");
-            }, 200 * index);
-        });
+    blgs.forEach((blog, index) => {
+        setTimeout(() => {
+            blogContainer.appendChild(createBlogElement(blog));
+            blogContainer.lastChild.classList.add("fade-in");
+        }, 200 * index);
     });
 }
 function renderSkills() {
@@ -172,7 +219,53 @@ function observeIntersection(elements, observerCallback, observerOptions = {}) {
 
 }
 
-function sectionInViewCallback(entry, observer) {
+async function loadGitHubStats() {
+    try {
+        const data = await callAPI(githubUrl);
+        return {
+            totalRepos: data.public_repos || 0,
+            totalFollowers: data.followers || 0
+        };
+    } catch (error) {
+        console.error("Error loading GitHub stats:", error);
+        return {
+            totalRepos: 0,
+            totalFollowers: 0
+        };
+    }
+}
+async function loadStats() {
+    stats.leetCode = await loadLeetCodeStats();
+    stats.github = await loadGitHubStats();
+    blogs = await loadBlogs();
+    stats.medium.totalBlogs = blogs.length;
+    return stats;
+}
+function renderStats() {
+    loadStats().then((_) => {
+        statsContainer.innerHTML = "";
+        Object.keys(statsView).forEach((key, index) => {
+            setTimeout(() => {
+            const stat = statsView[key];
+            const statItem = document.createElement("div");
+            statItem.classList.add("stat-item");
+            statItem.innerHTML = `
+                <span>
+                    <img src="${stat.icon}" alt="${stat.name}">
+                    ${stat.name}
+                </span>
+                <p>${stat.text}</p>`;
+            statsContainer.appendChild(statItem);
+            statItem.classList.add("fade-in");
+            }
+            , index * 200);
+        });
+    }).catch(error => {
+        console.error("Error loading stats:", error);
+    }
+    );
+}
+async function sectionInViewCallback(entry, observer) {
     if (entry.isIntersecting) {
         const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
         if (activeLink) {
@@ -183,18 +276,19 @@ function sectionInViewCallback(entry, observer) {
             }
         }
 
+        if (entry.target.id === "skills") {
+            const skillsContainer = document.getElementById("skills-container");
+            if (skillsContainer && !skillsContainer.classList.contains("viewed")) {
+                renderSkills();
+                renderStats();
+                skillsContainer.classList.add("viewed");
+            }
+        }
         if (entry.target.id === "blogs") {
             const blogContainer = document.getElementById("blogs-container");
             if (blogContainer && !blogContainer.classList.contains("viewed")) {
                 renderBlogs();
                 blogContainer.classList.add("viewed");
-            }
-        }
-        if (entry.target.id === "skills") {
-            const skillsContainer = document.getElementById("skills-container");
-            if (skillsContainer && !skillsContainer.classList.contains("viewed")) {
-                renderSkills();
-                skillsContainer.classList.add("viewed");
             }
         }
 
@@ -206,7 +300,7 @@ function workSectionInViewCallback(entry, observer) {
             const epam = document.getElementById("epam");
             if (epam && !epam.classList.contains("viewed")) {
                 epam.classList.add("viewed");
-                epam.classList.add("fade-in");
+                epam.classList.add("slow-fade-in");
                 epam.style.display = "flex";
             }
         }
@@ -221,12 +315,12 @@ function workSectionInViewCallback(entry, observer) {
 
     }
 }
-function sectionInView(threshold = 0.4) {
+function sectionInView(threshold = 0.35) {
     const sections = document.querySelectorAll("body > section");
 
     const observerOptions = {
         root: null,
-        rootMargin: `${-28 * rootFontSize}px 0px 0px 0px`,
+        rootMargin: `${-10 * rootFontSize}px 0px 0px 0px`,
         threshold
     };
     observeIntersection(sections, sectionInViewCallback, observerOptions);
@@ -262,7 +356,6 @@ function sendEmail() {
     });
 }
 document.addEventListener("DOMContentLoaded", async function () {
-    const stats = await loadLeetCodeStats();
     sectionInView();
     workSectionInView();
     sendEmail();
