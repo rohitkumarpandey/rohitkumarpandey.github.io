@@ -19,7 +19,8 @@ nav {
     justify-content: center;
     backdrop-filter: blur(30px);
     gap: 2rem;
-    box-shadow: 2px 2px 10px var(--tertiary-color);
+    box-shadow: 0px 0px 10px 2px var(--tertiary-color),
+        inset 0px 0px 1px 0px var(--secondary-color);
 }
 
 nav ul li img {
@@ -254,43 +255,13 @@ section.contact {
     align-content: baseline;
     justify-items: center;
 }
-
-.stats-container {
-    display: none;
-    width: 60%;
-    margin-top: 4.8rem;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.4rem;
-}
-
-.stat-item {
-    justify-content: center;
-    width: 100%;
-    height: 24rem;
-    border-radius: 1rem;
-    box-shadow: 2px 2px 10px var(--tertiary-color);
-}
-
-.stat-item>span {
-    margin-top: 0.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    gap: 0.8rem;
-}
-
-.stat-item>span>img {
-    width: 2.4rem;
-    height: 2.4rem;
-}
-
 .skills-container .skill {
     display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
 }
+
 
 .skills-container .skill h3 {
     font-size: 1.6rem;
@@ -304,6 +275,54 @@ section.contact {
     height: 3.2rem;
     margin-right: 1rem;
 }
+.stats-container {
+    display: grid;
+    width: 60%;
+    margin: 8rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.4rem;
+    position: relative;
+    justify-items: center;
+
+}
+
+.stats-container>img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.stat-item>span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.6rem;
+    gap: 0.8rem;
+    font-weight: 600;
+}
+
+.stat-item>p {
+    text-align: left;
+    font-size: 1.2rem;
+    color: var(--secondary-text-color);
+    margin: 0.8rem 0 0 0.8rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.stat-item>span>img {
+    width: 3.2rem;
+    height: 3.2rem;
+    filter: invert(100%);
+}
+.stats-container:has(.stat-item) {
+    position: relative;
+    box-shadow: 0px 0px 10px 2px var(--tertiary-color),
+        inset 0px 0px 1px 0px var(--secondary-color);
+    padding: 1.6rem 0;
+    border-radius: 1.6rem;
+}
 
 .blogs-container {
     width: 60%;
@@ -311,10 +330,6 @@ section.contact {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.blogs-container>img {
-    width: 8rem;
 }
 
 .blogs-container p {
@@ -514,7 +529,6 @@ p[class="company-name"] {
     margin: 0.8rem 0;
     font-size: 1.6rem;
     color: var(--text-color);
-    box-shadow: 0px 0px 30px var(--tertiary-color);
     border-radius: 1rem;
 }
 
