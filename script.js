@@ -12,17 +12,23 @@ const emailSubjectError = document.getElementById("title-error");
 const emailBodyError = document.getElementById("message-error");
 const statsContainer = document.getElementById("stats-container");
 
+const airIndiaDuration = document.getElementsByClassName("air-india-work-duration");
+
 const skills = [
     { name: 'JavaScript', icon: './assets/js.svg' },
-    { name: 'React.js', icon: './assets/react.svg' },
-    { name: 'Node.js', icon: './assets/nodejs.svg' },
+    { name: 'Typescript', icon: './assets/ts.svg' },
+    { name: 'Angular', icon: './assets/angular.svg' },
     { name: 'HTML', icon: './assets/html.svg' },
     { name: 'CSS3', icon: './assets/css3.svg' },
-    { name: 'Angular', icon: './assets/angular.svg' },
     { name: 'Java', icon: './assets/java.svg' },
     { name: 'Spring Boot', icon: './assets/spring-boot.svg' },
-    { name: 'Typescript', icon: './assets/ts.svg' },
+    { name: 'Node.js', icon: './assets/nodejs.svg' },
+    { name: 'React.js', icon: './assets/react.svg' },
+    { name: 'Azure', icon: './assets/azure.svg' },
     { name: 'AWS', icon: './assets/aws.svg' },
+    { name: 'PostgreSQL', icon: './assets/postgre.svg' },
+    { name: 'MongoDB', icon: './assets/mongo.svg' },
+    { name: 'MySQL', icon: './assets/mysql.svg' },
 ];
 
 const stats = {
@@ -80,6 +86,20 @@ const logos = {
     leetCode: "./assets/leetcode.svg",
     github: "./assets/github.svg",
     linkedIn: "./assets/linkedin.svg",
+}
+function getYearAndMonth(startDate) {
+    const start = new Date(startDate);
+    const now = new Date();
+
+    let years = now.getFullYear() - start.getFullYear();
+    let months = now.getMonth() - start.getMonth();
+
+    if (months < 0) {
+        years -= 1;
+        months += 12;
+    }
+    return `${years > 0 ? `${years} yr${years > 1 ? 's' : ''} ` : ''}${months > 0 ? `${months} mo${months > 1 ? 's' : ''}` : ''
+        }`.trim();
 }
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -243,10 +263,34 @@ async function loadGitHubStats() {
     }
 }
 async function loadStats() {
-    stats.leetCode = await loadLeetCodeStats();
-    stats.github = await loadGitHubStats();
-    blogs = await loadBlogs();
-    stats.medium.totalBlogs = blogs.length;
+    const [leetCodeResult, githubResult, blogsResult] = await Promise.allSettled([
+        loadLeetCodeStats(),
+        loadGitHubStats(),
+        loadBlogs()
+    ]);
+
+    // Handle LeetCode stats
+    if (leetCodeResult.status === "fulfilled") {
+        stats.leetCode = leetCodeResult.value;
+    } else {
+        console.error("Error loading LeetCode stats:", leetCodeResult.reason);
+    }
+
+    // Handle GitHub stats
+    if (githubResult.status === "fulfilled") {
+        stats.github = githubResult.value;
+    } else {
+        console.error("Error loading GitHub stats:", githubResult.reason);
+    }
+
+    // Handle Blogs
+    if (blogsResult.status === "fulfilled") {
+        blogs = blogsResult.value;
+        stats.medium.totalBlogs = blogs.length;
+    } else {
+        console.error("Error loading blogs:", blogsResult.reason);
+    }
+
     return stats;
 }
 function renderStats() {
@@ -254,19 +298,19 @@ function renderStats() {
         statsContainer.innerHTML = "";
         Object.keys(statsView).forEach((key, index) => {
             setTimeout(() => {
-            const stat = statsView[key];
-            const statItem = document.createElement("div");
-            statItem.classList.add("stat-item");
-            statItem.innerHTML = `
+                const stat = statsView[key];
+                const statItem = document.createElement("div");
+                statItem.classList.add("stat-item");
+                statItem.innerHTML = `
                 <span>
                     <img src="${stat.icon}" alt="${stat.name}">
                     ${stat.name}
                 </span>
                 <p>${stat.text}</p>`;
-            statsContainer.appendChild(statItem);
-            statItem.classList.add("fade-in");
+                statsContainer.appendChild(statItem);
+                statItem.classList.add("fade-in");
             }
-            , index * 200);
+                , index * 200);
         });
     }).catch(error => {
         console.error("Error loading stats:", error);
@@ -364,6 +408,12 @@ function sendEmail() {
     });
 }
 document.addEventListener("DOMContentLoaded", async function () {
+    if (airIndiaDuration) {
+        const duration = getYearAndMonth("2023-07-05");
+        Array.from(airIndiaDuration).forEach(element => {
+            element.textContent = `(${duration})`;
+        });
+    }
     sectionInView();
     workSectionInView();
     sendEmail();

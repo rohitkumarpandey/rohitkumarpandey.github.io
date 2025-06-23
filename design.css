@@ -219,6 +219,9 @@ section.contact {
 .project-container>div:nth-child(2) .project-icon {
     background-image: url('./assets/lv.png');
 }
+.project-container>div:nth-child(3) .project-icon {
+    background-image: url('./assets/portfolio.png');
+}
 
 .tech-tags {
     display: flex;

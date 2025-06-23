@@ -153,7 +153,6 @@ li {
     padding: 0.4rem 1rem;
     font-size: 1.2rem;
     border-radius: 2rem;
-    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -167,7 +166,6 @@ li {
     padding: 0.8rem 2.4rem;
     font-size: 1.6rem;
     border-radius: 2rem;
-    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -199,6 +197,7 @@ li {
 
 .loader {
     width: 8rem;
+    display: none;
 }
 
 b {
