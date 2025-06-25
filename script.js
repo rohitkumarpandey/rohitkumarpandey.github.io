@@ -13,7 +13,7 @@ const emailBodyError = document.getElementById("message-error");
 const statsContainer = document.getElementById("stats-container");
 
 const airIndiaDuration = document.getElementsByClassName("air-india-work-duration");
-
+const toggleModeButton = document.getElementById("light-dark-mode-btn");
 const skills = [
     { name: 'JavaScript', icon: './assets/js.svg' },
     { name: 'Typescript', icon: './assets/ts.svg' },
@@ -407,7 +407,45 @@ function sendEmail() {
         window.location.href = mailtoLink;
     });
 }
+
+function loadTheme(onload = false) {
+    const body = document.body;
+    let currentMode;
+    if (onload) {
+        currentMode = StorageService.getItem("mode") || 'dark';
+        body.classList.add(`${currentMode}-mode`);
+        StorageService.setItem("mode", currentMode);
+    } else {
+        const isDarkMode = body.classList.contains("dark-mode");
+        currentMode = isDarkMode ? "light" : "dark";
+        body.classList.remove(isDarkMode ? "dark-mode" : "light-mode");
+        body.classList.add(`${currentMode}-mode`);
+        StorageService.setItem("mode", currentMode);
+    }
+}
+
+function toggleTheme() {
+    loadTheme(false);
+}
+
+class StorageService {
+    static storage = localStorage;
+    static getItem(key) {
+        return this.storage.getItem(key);
+    }
+    static setItem(key, value) {
+        this.storage.setItem(key, value);
+    }
+    static removeItem(key) {
+        this.storage.removeItem(key);
+    }
+    static clear() {
+        this.storage.clear();
+    }
+}
 document.addEventListener("DOMContentLoaded", async function () {
+    loadTheme(true);
+    toggleModeButton.addEventListener("click", toggleTheme);
     if (airIndiaDuration) {
         const duration = getYearAndMonth("2023-07-05");
         Array.from(airIndiaDuration).forEach(element => {
