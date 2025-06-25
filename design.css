@@ -27,12 +27,12 @@ nav ul li img {
     width: 2.4rem;
     height: 2.4rem;
     margin: 0 0.4rem;
-    filter: invert(60%);
+    filter: var(--invert-60);
     padding: 0.8rem;
 }
 
 nav ul li img[class="active"] {
-    filter: invert(100%);
+    filter: var(--invert-100);
     background-color: var(--secondary-text-color);
     border-radius: 50%;
     transform: scale(1.1);
@@ -165,7 +165,7 @@ section.contact {
 .about-me-icon img {
     width: 4rem;
     height: 4rem;
-    filter: invert(60%);
+    filter: var(--invert-60);
 }
 
 .about-me-title,
@@ -321,7 +321,7 @@ section.contact {
 .stat-item>span>img {
     width: 3.2rem;
     height: 3.2rem;
-    filter: invert(100%);
+    filter: var(--invert-100);
 }
 
 .stats-container:has(.stat-item) {
@@ -399,7 +399,7 @@ section.contact {
 .blogs-container .blog span:nth-child(2)>button>img {
     width: 1.6rem;
     height: 1.6rem;
-    filter: invert(80%);
+    filter: var(--invert-80);
 }
 
 .blogs-container .blog span:nth-child(2)>button {
@@ -568,7 +568,7 @@ p[class="company-name"] {
 }
 
 .communication-channels-container>a:not(:first-child)>.contact-icon {
-    filter: invert(100%);
+    filter: var(--invert-100);
 }
 
 .contact-container>form {

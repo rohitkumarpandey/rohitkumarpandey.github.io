@@ -1,6 +1,38 @@
-@media (max-width: 48em) {
+@media  (min-width: 31em) and (max-width: 80em) {
     html {
-        font-size: 40%;
+        font-size: 50%;
+    }
+
+    .about-me-container,
+    .project-container {
+        width: 80%;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(4, 1fr);
+        width: 80%;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(3, 1fr);
+        width: 80%;
+    }
+
+    .blogs-container {
+        width: 80%;
+    }
+
+    .work-container {
+        width: 80%;
+    }
+    .contact-container {
+        width: 60%;
+    }
+}
+
+@media (max-width: 30em) {
+    html {
+        font-size: 30%;
     }
 
     nav {
