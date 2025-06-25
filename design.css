@@ -219,6 +219,7 @@ section.contact {
 .project-container>div:nth-child(2) .project-icon {
     background-image: url('./assets/lv.png');
 }
+
 .project-container>div:nth-child(3) .project-icon {
     background-image: url('./assets/portfolio.png');
 }
@@ -350,8 +351,9 @@ section.contact {
     display: flex;
     width: 100%;
     height: 8rem;
-    box-shadow: 1px 1px 10px var(--tertiary-color);
     margin-bottom: 1.6rem;
+    border-radius: 1.6rem;
+    border: 2px solid var(--tertiary-color);
 }
 
 .blogs-container .blog:hover {
@@ -366,7 +368,7 @@ section.contact {
 
 .blogs-container .blog>div:nth-child(1) {
     flex-direction: column;
-    width: 80%;
+    width: 78%;
     justify-content: center;
     gap: 1.6rem;
 }
@@ -374,13 +376,17 @@ section.contact {
 .blogs-container .blog>div:nth-child(2) {
     justify-content: flex-end;
     align-items: center;
-    width: 20%;
+    width: 22%;
+}
+
+.blogs-container .blog>div:nth-child(2)>a {
+    color: var(--text-color);
 }
 
 .blogs-container .blog span:nth-child(1) {
     font-size: 1.4rem;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--secondary-text-color);
 }
 
 .blogs-container .blog span:nth-child(2) {
@@ -526,18 +532,21 @@ p[class="company-name"] {
     flex-direction: column;
     justify-content: center;
 }
-.contact-container > span {
+
+.contact-container>span {
     font-size: 2.4rem;
     font-weight: 500;
     color: var(--secondary-text-color);
     margin: 7.2rem 0 0 0;
     text-align: center;
 }
-.contact-container > span .highlight-text {
+
+.contact-container>span .highlight-text {
     color: var(--text-color);
     font-weight: 600;
     font-size: 1.6rem;
 }
+
 .communication-channels-container {
     display: flex;
     align-items: center;
@@ -547,15 +556,18 @@ p[class="company-name"] {
     padding: 1rem 0;
     border-radius: 1.6rem;
 }
+
 .communication-channels-container .contact-icon {
     width: 6.4rem;
     height: 6.4rem;
 }
+
 .communication-channels-container .contact-icon:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
 }
-.communication-channels-container > a:not(:first-child) > .contact-icon {
+
+.communication-channels-container>a:not(:first-child)>.contact-icon {
     filter: invert(100%);
 }
 
