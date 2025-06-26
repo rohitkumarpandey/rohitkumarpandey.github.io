@@ -367,7 +367,7 @@ function workSectionInViewCallback(entry, observer) {
 
     }
 }
-function sectionInView(threshold = 0.35) {
+function sectionInView(threshold = 0.30) {
     const sections = document.querySelectorAll("body > section");
 
     const observerOptions = {

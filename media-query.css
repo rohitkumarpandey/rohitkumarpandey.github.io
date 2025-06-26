@@ -1,8 +1,7 @@
-@media  (min-width: 31em) and (max-width: 80em) {
+@media (min-width: 31em) and (max-width: 80em) {
     html {
         font-size: 50%;
     }
-
     .about-me-container,
     .project-container {
         width: 80%;
@@ -25,16 +24,19 @@
     .work-container {
         width: 80%;
     }
+
     .contact-container {
         width: 60%;
+    }
+    .work-details>.achievements>div>span {
+        gap: 0.1rem;
     }
 }
 
 @media (max-width: 30em) {
     html {
-        font-size: 30%;
+        font-size: 37.5%;
     }
-
     nav {
         padding: 1.6rem;
     }
