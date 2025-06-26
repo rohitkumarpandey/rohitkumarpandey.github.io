@@ -56,11 +56,11 @@ p {
 }
 
 body[class="light-mode"] {
-    --primary-color: #fff;
-    --secondary-color: #f5f5f5;
-    --tertiary-color: #adadad;
+    --primary-color: #f5f5f5;
+    --secondary-color: #ebebeb;
+    --tertiary-color: #e0e0e0;
     --text-color: #000;
-    --secondary-text-color: #6d6969;
+    --secondary-text-color: #666666;
     --accent-color: #4CAF50;
     --blur-primary-color: rgba(255, 255, 255, 0.1);
     --invert-60: invert(40%);
@@ -157,7 +157,19 @@ li {
     background-color: var(--accent-color);
     color: var(--primary-color);
 }
-
+.xs-pills {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--tertiary-color);
+    color: var(--secondary-text-color);
+    padding: 0.2rem 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
 .sm-pills {
     background-color: var(--secondary-color);
     border: 1px solid var(--tertiary-color);
@@ -169,6 +181,7 @@ li {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 .lg-pills {

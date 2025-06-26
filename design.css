@@ -503,6 +503,33 @@ section.contact {
     letter-spacing: -0.1rem;
 }
 
+.work-details>.achievements {
+    font-size: 1.6rem;
+    color: var(--secondary-text-color);
+    margin-left: 5.4rem;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.work-details>.achievements img {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 0.4rem;
+    filter: var(--invert-80);
+}
+
+.work-details>.achievements>div>span {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.4rem;
+    gap: 0.8rem;
+}
+.work-details>.achievements>div>span>span {
+    font-weight: 500;
+}
+
 .work-details::before {
     content: '';
     position: absolute;
