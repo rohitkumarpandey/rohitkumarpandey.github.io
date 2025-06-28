@@ -35,7 +35,7 @@
 
 @media (max-width: 30em) {
     html {
-        font-size: 37.5%;
+        font-size: 40%;
     }
     nav {
         padding: 1.6rem;
@@ -44,6 +44,9 @@
     nav ul li img {
         width: 3.2rem;
         height: 3.2rem;
+    }
+    .occupation h2 {
+        font-size: 5.6rem;
     }
 
     .about-me-container,
