@@ -165,7 +165,11 @@ section.contact {
     height: 4rem;
     filter: var(--invert-60);
 }
-
+#industrial-experience {
+    font: inherit;
+    font-weight: 500;
+    color: var(--text-color);
+}
 .about-me-title,
 .project-title {
     font-size: 2.4rem;

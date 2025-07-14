@@ -14,6 +14,8 @@ const statsContainer = document.getElementById("stats-container");
 
 const airIndiaDuration = document.getElementsByClassName("air-india-work-duration");
 const toggleModeButton = document.getElementById("light-dark-mode-btn");
+const industrialExperience = document.getElementById("industrial-experience");
+
 const skills = [
     { name: 'JavaScript', icon: './assets/js.svg' },
     { name: 'Typescript', icon: './assets/ts.svg' },
@@ -443,6 +445,11 @@ class StorageService {
         this.storage.clear();
     }
 }
+
+function getIndustrialExperience() {
+    const startDate = '2019-09-09';
+    industrialExperience.textContent = getYearAndMonth(startDate);
+}
 document.addEventListener("DOMContentLoaded", async function () {
     loadTheme(true);
     toggleModeButton.addEventListener("click", toggleTheme);
@@ -454,5 +461,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
     sectionInView();
     workSectionInView();
+    getIndustrialExperience();
     sendEmail();
 });
