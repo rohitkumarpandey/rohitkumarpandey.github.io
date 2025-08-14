@@ -29,10 +29,11 @@ nav ul li img {
     margin: 0 0.4rem;
     filter: var(--invert-60);
     padding: 0.8rem;
+    transition: none;
 }
 
 nav ul li img[class="active"] {
-    filter: var(--invert-100);
+    filter: invert(1);
     background-color: var(--secondary-text-color);
     border-radius: 50%;
     transform: scale(1.1);
@@ -210,7 +211,7 @@ section.contact {
     height: 32rem;
     border-radius: 1rem;
     background-position: center;
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
@@ -588,10 +589,15 @@ p[class="company-name"] {
     padding: 1rem 0;
     border-radius: 1.6rem;
 }
-
-.communication-channels-container .contact-icon {
+.communication-channels-container > a {
+    border: 2px solid var(--tertiary-color);
     width: 6.4rem;
     height: 6.4rem;
+    border-radius: 8px;
+}
+.communication-channels-container .contact-icon {
+    height: 100%;
+    width: 100%;
 }
 
 .communication-channels-container .contact-icon:hover {

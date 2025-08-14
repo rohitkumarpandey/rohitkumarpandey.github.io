@@ -27,6 +27,9 @@
     .contact-container {
         width: 60%;
     }
+    .project-icon {
+        height: 30rem;
+    }
 }
 
 @media (max-width: 34em) {
@@ -112,6 +115,9 @@
 
     .contact-container {
         width: 80%;
+    }
+    .project-icon {
+        height: 30rem;
     }
 
 }

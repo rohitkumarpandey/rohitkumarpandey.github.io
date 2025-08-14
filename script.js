@@ -20,7 +20,7 @@ const skills = [
     { name: 'JavaScript', icon: './assets/js.svg' },
     { name: 'Typescript', icon: './assets/ts.svg' },
     { name: 'Angular', icon: './assets/angular.svg' },
-    { name: 'HTML', icon: './assets/html.svg' },
+    { name: 'HTML 5', icon: './assets/html.svg' },
     { name: 'CSS3', icon: './assets/css3.svg' },
     { name: 'Java', icon: './assets/java.svg' },
     { name: 'Spring Boot', icon: './assets/spring-boot.svg' },
