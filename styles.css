@@ -84,9 +84,16 @@ body {
     background-color: var(--primary-color);
     color: var(--text-color);
 }
-* {
-    transition: background-color 1s ease, color 1s ease, border-color 1s ease, box-shadow 1s ease;
-  }
+
+
+/* Enable smooth transitions when .all-transitions is present */
+body.all-transitions,
+body.all-transitions * {
+    transition: background-color 1.5s ease-out,
+        color 1.5s ease-out,
+        border-color 1.5s ease-out,
+        box-shadow 1.5s ease-out;
+}
 
 /* Disable transitions by default */
 body * {
