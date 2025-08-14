@@ -422,6 +422,7 @@ function loadTheme(onload = false) {
         currentMode = isDarkMode ? "light" : "dark";
         body.classList.remove(isDarkMode ? "dark-mode" : "light-mode");
         body.classList.add(`${currentMode}-mode`);
+        body.classList.add('all-transitions');
         StorageService.setItem("mode", currentMode);
     }
 }

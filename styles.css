@@ -54,7 +54,7 @@ p {
     margin: 0;
 }
 
-body[class="light-mode"] {
+body.light-mode {
     --primary-color: #f5f5f5;
     --secondary-color: #ebebeb;
     --tertiary-color: #e0e0e0;
@@ -67,7 +67,7 @@ body[class="light-mode"] {
     --invert-100: invert(0%);
 }
 
-body[class="dark-mode"] {
+body.dark-mode {
     --primary-color: #000;
     --secondary-color: #1f1f1f;
     --tertiary-color: #333333;
@@ -87,6 +87,20 @@ body {
 * {
     transition: background-color 1s ease, color 1s ease, border-color 1s ease, box-shadow 1s ease;
   }
+
+/* Disable transitions by default */
+body * {
+    transition: none;
+}
+
+/* Enable smooth transitions when .all-transitions is present */
+body.all-transitions,
+body.all-transitions * {
+    transition: background-color 1.5s ease-out,
+        color 1.5s ease-out,
+        border-color 1.5s ease-out,
+        box-shadow 1.5s ease-out;
+}
 
 input,
 textarea {
