@@ -87,12 +87,18 @@ body {
 
 
 /* Enable smooth transitions when .all-transitions is present */
-body.all-transitions,
+body.all-transitions {
+    transition: background-color 1.5s ease-out,
+        color 1.5s ease-out,
+        filter 1.5s ease-out;
+}
 body.all-transitions * {
     transition: background-color 1.5s ease-out,
         color 1.5s ease-out,
         border-color 1.5s ease-out,
-        box-shadow 1.5s ease-out;
+        box-shadow 1.5s ease-out,
+        filter 1.5s ease-out,
+        opacity 1.5s ease-out;
 }
 
 input,
