@@ -1,5 +1,5 @@
 const mediumUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@pandey-rohit";
-const leetcodeUrl = "https://leetcode-stats-api.herokuapp.com/rohitpandey96";
+const leetcodeUrl = "https://leetcode-stats.tashif.codes/rohitpandey96";
 const githubUrl = "https://api.github.com/users/rohitkumarpandey";
 const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize); // Root font size in pixels
 
@@ -130,14 +130,12 @@ function formatDate(dateString) {
 }
 
 async function callAPI(url) {
-    return fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            return data;
-        })
-        .catch(error => {
-            console.error("Error fetching data:", error);
-        });
+    try {
+        const response = await fetch(url);
+        return await response.json();
+    } catch (error) {
+        console.error("Error fetching data:");
+    }
 }
 
 async function loadBlogs() {
@@ -156,7 +154,7 @@ async function loadBlogs() {
         }
         return blogs;
     } catch (error) {
-        console.error("Error loading blogs:", error);
+        console.error("Error loading blogs:");
         return [];
     }
 }
@@ -176,7 +174,7 @@ async function loadLeetCodeStats() {
             ranking: data.ranking || 0
         };
     } catch (error) {
-        console.error("Error loading LeetCode stats:", error);
+        console.error("Error loading LeetCode stats:");
         return {
             totalSolved: 0,
             totalQuestions: 0,

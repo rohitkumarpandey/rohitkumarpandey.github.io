@@ -92,6 +92,7 @@ body.all-transitions {
         color 1.5s ease-out,
         filter 1.5s ease-out;
 }
+
 body.all-transitions * {
     transition: background-color 1.5s ease-out,
         color 1.5s ease-out,
