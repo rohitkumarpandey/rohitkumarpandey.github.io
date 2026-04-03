@@ -546,6 +546,7 @@ section.contact {
     background-color: var(--primary-color);
     border: 0.4rem solid var(--accent-color);
     border-radius: 50%;
+    transition: background-color 1.5s ease-out;
 }
 
 p[class="company-name"] {
