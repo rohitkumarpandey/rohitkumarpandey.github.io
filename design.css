@@ -213,17 +213,20 @@ section.contact {
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    margin-bottom: 0.4rem;
 }
-
 .project-container>div:nth-child(1) .project-icon {
+    background-image: url('./assets/jsonex.png');
+}
+.project-container>div:nth-child(2) .project-icon {
     background-image: url('./assets/proxy-server.png');
 }
 
-.project-container>div:nth-child(2) .project-icon {
+.project-container>div:nth-child(3) .project-icon {
     background-image: url('./assets/lv.png');
 }
 
-.project-container>div:nth-child(3) .project-icon {
+.project-container>div:nth-child(4) .project-icon {
     background-image: url('./assets/portfolio.png');
 }
 .project-content {
@@ -243,10 +246,10 @@ section.contact {
 }
 
 .project-footer {
-    margin: 0;
+    margin-top: 1.6rem;
     display: flex;
     flex-direction: column;
-    gap: 4.8rem;
+    gap: 3.2rem;
 }
 
 .project-btns {
